@@ -2,7 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CartoGothicStd-Bold.ttf">
+            <string>CartoGothicStd-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -30,6 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addStack" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cf1-GA-KZa"/>
+                                    <segue destination="Lki-VU-aed" kind="presentation" id="FUZ-Je-svf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zAf-oF-yfg">
@@ -54,6 +61,116 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Neuer Stapel-->
+        <scene sceneID="bIF-ZD-OiQ">
+            <objects>
+                <tableViewController id="gur-aK-PF7" customClass="NewStackTableViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="f7g-Yr-I4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94550978539999997" green="0.94550978539999997" blue="0.94550978539999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="fup-gF-X8E">
+                            <rect key="frame" x="0.0" y="124" width="600" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAp-IV-GtH">
+                                    <rect key="frame" x="196" y="18" width="209" height="43"/>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="43" id="5cU-30-yYM"/>
+                                        <constraint firstAttribute="width" constant="209" id="VmC-bR-ocV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Speichern">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addStack" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuU-im-F9Y"/>
+                                        <action selector="saveStack" destination="gur-aK-PF7" eventType="touchUpInside" id="d0p-3i-X7k"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="LAp-IV-GtH" secondAttribute="centerY" constant="0.5" id="Q3Q-Ha-Hlx"/>
+                                <constraint firstAttribute="centerX" secondItem="LAp-IV-GtH" secondAttribute="centerX" constant="-0.5" id="ig5-HW-xHp"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="1FF-ek-I61">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="E4M-Kk-Xts">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E4M-Kk-Xts" id="Ii1-OP-X0M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv2-6W-NA4">
+                                                    <rect key="frame" x="14" y="15" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" name="CartoGothicStd-Bold" family="CartoGothic Std" pointSize="17"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Eingabe" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2p-BS-h7b">
+                                                    <rect key="frame" x="290" y="11" width="302" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="302" id="Xbh-TX-ZPm"/>
+                                                        <constraint firstAttribute="height" constant="30" id="tB5-VS-9aH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R2p-BS-h7b" firstAttribute="top" secondItem="Ii1-OP-X0M" secondAttribute="topMargin" constant="3" id="DUH-8x-OcX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R2p-BS-h7b" secondAttribute="trailing" id="b2n-wx-xJ2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="gur-aK-PF7" id="5sM-je-FyF"/>
+                            <outlet property="delegate" destination="gur-aK-PF7" id="1Cr-jj-6hq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Neuer Stapel" id="pNV-nJ-A9S">
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="Bf1-uL-lfT">
+                            <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="closeView:" destination="gur-aK-PF7" id="KOg-a9-L13"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="R2p-BS-h7b" id="4vk-Lm-uKm"/>
+                        <outlet property="saveButton" destination="LAp-IV-GtH" id="dfP-wb-1RI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rrd-fS-VWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698" y="309"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kLH-hy-baJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lki-VU-aed" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMu-vq-Q2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gur-aK-PF7" kind="relationship" relationship="rootViewController" id="oXI-rJ-CYE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKn-x2-gb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="309"/>
         </scene>
     </scenes>
     <resources>

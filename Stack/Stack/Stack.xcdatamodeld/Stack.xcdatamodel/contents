@@ -4,14 +4,14 @@
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="relationship" inverseEntity="Category" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stack" inverseName="cards" inverseEntity="Stack" syncable="YES"/>
     </entity>
-    <entity name="Category" syncable="YES">
+    <entity name="Stack" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="relationship" inverseEntity="Card" syncable="YES"/>
+        <relationship name="cards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="relationship" inverseEntity="Card" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Category" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Stack" positionX="-243" positionY="-18" width="128" height="73"/>
     </elements>
 </model>
