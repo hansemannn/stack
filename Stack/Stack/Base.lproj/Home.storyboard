@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,21 +23,20 @@
                                     <constraint firstAttribute="height" constant="43" id="Hxg-gt-iZ6"/>
                                     <constraint firstAttribute="width" constant="209" id="jce-oj-opz"/>
                                 </constraints>
-                                <state key="normal" title="Neuer Kartei anlegen">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Neuen Stapel anlegen">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="view.layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addStack" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cf1-GA-KZa"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zAf-oF-yfg">
-                                <rect key="frame" x="173" y="60" width="255" height="112"/>
+                                <rect key="frame" x="213" y="60" width="174" height="76"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="CPr-QZ-CS9"/>
-                                    <constraint firstAttribute="height" constant="112" id="REw-fb-s8K"/>
+                                    <constraint firstAttribute="width" constant="174" id="CPr-QZ-CS9"/>
+                                    <constraint firstAttribute="height" constant="76" id="REw-fb-s8K"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -49,6 +48,9 @@
                             <constraint firstAttribute="centerX" secondItem="w3c-OD-cel" secondAttribute="centerX" constant="-0.5" id="xFX-1K-S7Y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newStackButton" destination="w3c-OD-cel" id="PVj-iy-awr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
