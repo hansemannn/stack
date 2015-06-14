@@ -48,10 +48,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FTJ-kf-OcF">
                                 <rect key="frame" x="0.0" y="150" width="600" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="2Hb-Mc-50p"/>
-                                    <constraint firstAttribute="height" constant="300" id="AqM-gj-0lJ"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StackCell" id="ajR-X0-3d3" customClass="StackTableViewCell" customModule="Stack" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -67,14 +63,20 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UY-kQ-sPP" userLabel="Number of Cards View">
                                                     <rect key="frame" x="8" y="11" width="40" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K9-cF-LK5">
-                                                            <rect key="frame" x="6" y="10" width="28" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K9-cF-LK5">
+                                                            <rect key="frame" x="6" y="6" width="28" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0K9-cF-LK5" firstAttribute="leading" secondItem="7UY-kQ-sPP" secondAttribute="leading" constant="6" id="A9z-8G-hi0"/>
+                                                        <constraint firstItem="0K9-cF-LK5" firstAttribute="centerX" secondItem="7UY-kQ-sPP" secondAttribute="centerX" id="K54-UD-AYY"/>
+                                                        <constraint firstItem="0K9-cF-LK5" firstAttribute="centerY" secondItem="7UY-kQ-sPP" secondAttribute="centerY" id="hnP-4S-p8e"/>
+                                                        <constraint firstItem="0K9-cF-LK5" firstAttribute="top" secondItem="7UY-kQ-sPP" secondAttribute="top" constant="6" id="k6E-8R-S0l"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -92,6 +94,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="lum-IP-Yk9" id="NXF-yc-agg"/>
                                             <outlet property="numberOfCardsLabel" destination="0K9-cF-LK5" id="b9i-dX-8Uy"/>
+                                            <outlet property="numberOfCardsView" destination="7UY-kQ-sPP" id="fvw-87-h4t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -103,12 +106,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="FTJ-kf-OcF" secondAttribute="centerX" id="E6b-X0-Unw"/>
+                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YW-FA-2gq"/>
                             <constraint firstAttribute="centerX" secondItem="zAf-oF-yfg" secondAttribute="centerX" constant="-0.5" id="SG9-JM-Hkv"/>
-                            <constraint firstAttribute="centerY" secondItem="FTJ-kf-OcF" secondAttribute="centerY" id="i75-ka-fmg"/>
+                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="centerX" secondItem="w3c-OD-cel" secondAttribute="centerX" id="Tju-B0-qUC"/>
+                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cxN-dC-6nf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w3c-OD-cel" secondAttribute="bottom" constant="73" id="n3Z-uk-86s"/>
                             <constraint firstItem="zAf-oF-yfg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="owY-I0-eym"/>
                             <constraint firstAttribute="centerX" secondItem="w3c-OD-cel" secondAttribute="centerX" constant="-0.5" id="xFX-1K-S7Y"/>
+                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="top" secondItem="zAf-oF-yfg" secondAttribute="bottom" constant="14" id="yX1-19-9Sc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -208,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrd-fS-VWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1698" y="309"/>
+            <point key="canvasLocation" x="1728" y="243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLH-hy-baJ">
@@ -226,7 +231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKn-x2-gb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="309"/>
+            <point key="canvasLocation" x="1040" y="243"/>
         </scene>
     </scenes>
     <resources>

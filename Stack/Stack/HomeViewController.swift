@@ -100,10 +100,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         var stacks : [Stack] = self.stackCollection.getStacks()!
         let cellData = stacks[indexPath.row]
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
         
         cell.nameLabel.text = cellData.name
         cell.numberOfCardsLabel.text = String(cellData.cards.count)
+        cell.numberOfCardsView.layer.cornerRadius = 20.0
         
         return cell
     }
