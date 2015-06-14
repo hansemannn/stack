@@ -8,11 +8,13 @@
 
 import UIKit
 
-class NewStackTableViewController: UITableViewController, StackCollectionLoadStackDelegate {
+class NewStackTableViewController: UITableViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
     @IBOutlet weak var nameField: UITextField!
+
+    var collection = StackCollection.instance
 
     @IBAction func saveStack() {
         if self.nameField.text.isEmpty == true {
@@ -35,11 +37,6 @@ class NewStackTableViewController: UITableViewController, StackCollectionLoadSta
     
     @IBAction func closeView(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    var collection = StackCollection.instance
-    
-    func loadStack(stack: Stack) {
     }
     
     override func viewDidLoad() {

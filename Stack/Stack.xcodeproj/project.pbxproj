@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		249B2D0FD2EA30B7797FE5B7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE3AA35809D5A88C5F5D419 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3A1814131B2CE94900F53AE2 /* StackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */; };
 		3A1869F31B2C2AE6008E779A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1869F21B2C2AE6008E779A /* AppDelegate.swift */; };
 		3A1869F51B2C2AF0008E779A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1869F41B2C2AF0008E779A /* HomeViewController.swift */; };
 		3A1869FC1B2C2B1B008E779A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
@@ -15,7 +16,6 @@
 		3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BA1B2B7B6600E03BA4 /* Home.storyboard */; };
 		3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BF1B2B7B6600E03BA4 /* LaunchScreen.xib */; };
 		3A2AB1CD1B2B7B6600E03BA4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */; };
-		3A9734A71B2C2C970092DF5A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A9734A61B2C2C970092DF5A /* Info.plist */; };
 		3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */; };
 		3A9734AE1B2C363B0092DF5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */; };
 		3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */; };
@@ -36,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		201BD7F39AD5FFE52A8EAC73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewCell.swift; sourceTree = "<group>"; };
 		3A1869F21B2C2AE6008E779A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A1869F41B2C2AF0008E779A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3A1869FA1B2C2B1B008E779A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../../../6. semester/mobile anwendungen/Hausarbeit/stack/Stack/Stack/Images.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1814141B2CF17100F53AE2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		3A1869FD1B2C2B3B008E779A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +103,7 @@
 			children = (
 				3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */,
 				3A1869F41B2C2AF0008E779A /* HomeViewController.swift */,
+				3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -156,7 +166,7 @@
 		3A2AB1B11B2B7B6600E03BA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */,
+				3A1814141B2CF17100F53AE2 /* Fonts */,
 				3A1869FA1B2C2B1B008E779A /* Images.xcassets */,
 				3A9734A61B2C2C970092DF5A /* Info.plist */,
 			);
@@ -308,7 +318,6 @@
 				3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */,
 				3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */,
 				3A1869FC1B2C2B1B008E779A /* Images.xcassets in Resources */,
-				3A9734A71B2C2C970092DF5A /* Info.plist in Resources */,
 				3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +386,7 @@
 			files = (
 				3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */,
 				3A1869F51B2C2AF0008E779A /* HomeViewController.swift in Sources */,
+				3A1814131B2CE94900F53AE2 /* StackTableViewCell.swift in Sources */,
 				3AD6A6721B2CC5AA00801033 /* Stack.swift in Sources */,
 				3A1869F31B2C2AE6008E779A /* AppDelegate.swift in Sources */,
 				3A2AB1B71B2B7B6600E03BA4 /* Stack.xcdatamodeld in Sources */,

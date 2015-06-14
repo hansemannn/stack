@@ -10,16 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol StackCollectionLoadStackDelegate {
-    func loadStack(stack: Stack)
-}
-
 class StackCollection : NSObject {
-    var amount : Double = 0.0
-    var duration : Int = 1
-    var interest : Double = 0.0
-    var loadStackDelegate:StackCollectionLoadStackDelegate?
-    var lastResult:Double? = nil
+    var amount: Double = 0.0
+    var duration: Int = 1
+    var interest: Double = 0.0
+    var lastResult: Double?
     static let instance = StackCollection()
     
     func saveStack(stack: Stack) -> Bool {
@@ -28,8 +23,8 @@ class StackCollection : NSObject {
         let managedContext = appDelegate.managedObjectContext!
         
         //Create a empty managed object with a profile entity description in our managed context
-        let entity = NSEntityDescription.entityForName("Stack", inManagedObjectContext:managedContext)
-        let newStack = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        let entity = NSEntityDescription.entityForName("Stack", inManagedObjectContext: managedContext)
+        let newStack = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         //Set values of the managed object
         newStack.setValue(stack.name, forKey: "name")
@@ -52,7 +47,7 @@ class StackCollection : NSObject {
         let managedContext = appDelegate.managedObjectContext!
         
         //Create fetch request to get all entries of the profile table
-        let fetchRequest = NSFetchRequest(entityName:"Stack")
+        let fetchRequest = NSFetchRequest(entityName: "Stack")
         
         //  Execute fetch request
         var error: NSError?
