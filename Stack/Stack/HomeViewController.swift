@@ -92,6 +92,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return recordCount!
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var stacks : [Stack] = self.stackCollection.getStacks()!
+        let stack = stacks[indexPath.row]
+        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //self.performSegueWithIdentifier("DetailSegue", sender: stack)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -104,9 +113,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.nameLabel.text = cellData.name
         cell.numberOfCardsLabel.text = String(cellData.cards.count)
-        cell.numberOfCardsView.layer.cornerRadius = 20.0
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*if(segue.identifier == "DetailSegue") {
+            println("segue called")
+            var vc : StackDetailsCollectionViewController = segue.destinationViewController as! StackDetailsCollectionViewController
+            vc.stack = sender as! Stack
+        }*/
     }
 }
 

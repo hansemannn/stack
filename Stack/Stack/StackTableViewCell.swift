@@ -9,9 +9,6 @@
 import UIKit
 
 class StackTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var numberOfCardsView: UIView!
-   
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var numberOfCardsLabel: UILabel!
