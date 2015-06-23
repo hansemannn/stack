@@ -21,9 +21,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBInspectable lazy var emptyLabel = UILabel()
     
     var stackCollection = StackCollection.instance
+    var stacks = []
     var numberOfStacks: Int!
     
     override func viewDidLoad() {
+        self.stacks = stackCollection.getStacks()!
+        self.numberOfStacks = self.stacks.count
+        
         super.viewDidLoad()
     }
 
@@ -32,7 +36,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.numberOfStacks = stackCollection.getStacks()?.count
+        self.stacks = stackCollection.getStacks()!
+        self.numberOfStacks = self.stacks.count
+        
         self.addUI()
         
         println("\(numberOfStacks) Stapel vorhanden")
@@ -87,18 +93,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let recordCount = self.stackCollection.getStacks()?.count
+        let recordCount = self.numberOfStacks
         
         return recordCount!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var stacks : [Stack] = self.stackCollection.getStacks()!
-        let stack = stacks[indexPath.row]
-        
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        //self.performSegueWithIdentifier("DetailSegue", sender: stack)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -106,13 +107,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var stacks : [Stack] = self.stackCollection.getStacks()!
-        let cellData = stacks[indexPath.row]
+        let cellData = self.stacks[indexPath.row] as? Stack
         
         var cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
         
-        cell.nameLabel.text = cellData.name
-        cell.numberOfCardsLabel.text = String(cellData.cards.count)
+        cell.nameLabel.text = cellData!.name
+        cell.numberOfCardsLabel.text = String(cellData!.cards.count)
         
         return cell
     }

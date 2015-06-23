@@ -1,5 +1,5 @@
 //
-//  QuestionCollectionViewCell.swift
+//  CardCollectionViewCell.swift
 //  Stack
 //
 //  Created by Hans Knöchel on 14.06.15.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class QuestionCollectionViewCell: UICollectionViewCell {
+class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var questionLabel: UILabel!
 }

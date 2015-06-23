@@ -24,10 +24,10 @@ class StackCollection : NSObject {
         
         //Create a empty managed object with a profile entity description in our managed context
         let entity = NSEntityDescription.entityForName("Stack", inManagedObjectContext: managedContext)
-        let newStack = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let newStack = NSEntityDescription.insertNewObjectForEntityForName("Stack", inManagedObjectContext: managedContext) as! Stack
         
-        //Set values of the managed object
-        newStack.setValue(stack.name, forKey: "name")
+        newStack.name = stack.name
+        newStack.cards = stack.cards
         
         //Save managed context
         var error: NSError?
@@ -48,20 +48,12 @@ class StackCollection : NSObject {
         
         //Create fetch request to get all entries of the profile table
         let fetchRequest = NSFetchRequest(entityName: "Stack")
-        
-        //  Execute fetch request
         var error: NSError?
-        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
-        
-        //If results not nil, create array of profiles, else return nil
-        if let results = fetchedResults {
-            var stacks = [Stack]()
-            for result in results {
-                var stack = Stack(name: (result.valueForKey("name") as? String)!, cards:[Card(question: "", answer: "")])
-                stacks.append(stack)
-            }
-            
-            return stacks
+                
+        // Execute the fetch request, and cast the results to an array of LogItem objects
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Stack] {
+            println(fetchResults)
+            return fetchResults
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
             return nil

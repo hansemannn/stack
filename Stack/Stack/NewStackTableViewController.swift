@@ -15,15 +15,20 @@ class NewStackTableViewController: UITableViewController {
     @IBOutlet weak var nameField: UITextField!
 
     var collection = StackCollection.instance
+    var cards: [Card] = []
 
     @IBAction func saveStack() {
         if self.nameField.text.isEmpty == true {
             return
         }
         
-        let success : Bool = collection.saveStack(Stack(name: self.nameField.text, cards: []))
+        var stack = Stack()
+        stack.name = self.nameField.text
+        stack.cards = self.cards
+        
+        let success : Bool = collection.saveStack(stack)
 
-        if collection.saveStack(Stack(name: self.nameField.text!, cards: [])) {
+        if success == true {
             var alert = UIAlertController(
                 title: "Speichern erfolgreich",
                 message: "\"\(self.nameField.text)\" wurde erfolgreich gespeichert!",
@@ -55,6 +60,14 @@ class NewStackTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
+    }
+    
+    @IBAction func unwindNewCardToList(segue: UIStoryboardSegue) {
+        let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
+
+        if source.cardData != nil {
+            self.cards.append(source.cardData)
+        }        
     }
 }

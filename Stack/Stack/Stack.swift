@@ -7,18 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class Stack: Printable {
-    
-    var name: String
-    var cards: [Card]
-    
-    init(name: String, cards: [Card]){
-        self.name = name
-        self.cards = cards
-    }
-    
-    var description: String {
-        return "\(self.name) hat \(self.cards) Karten"
-    }
+class Stack: NSManagedObject {    
+    @NSManaged var name: String
+    @NSManaged var cards: [Card]
 }

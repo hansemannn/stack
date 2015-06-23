@@ -7,18 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class Card: Printable {
-    
-    var question: String
-    var answer: String
-    
-    init(question: String, answer: String){
-        self.question = question
-        self.answer = answer
-    }
-    
-    var description: String {
-        return "\(self.question): \(self.answer)"
-    }
+class Card: NSManagedObject {
+    @NSManaged var question: String
+    @NSManaged var answer: String
 }

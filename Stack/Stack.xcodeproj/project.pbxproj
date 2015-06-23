@@ -16,11 +16,11 @@
 		3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BA1B2B7B6600E03BA4 /* Home.storyboard */; };
 		3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BF1B2B7B6600E03BA4 /* LaunchScreen.xib */; };
 		3A2AB1CD1B2B7B6600E03BA4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */; };
-		3A5FF5321B2E04A100CA02FE /* QuestionDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FF5311B2E04A100CA02FE /* QuestionDetailsTableViewController.swift */; };
+		3A5FF5321B2E04A100CA02FE /* CardDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */; };
 		3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */; };
 		3A9734AE1B2C363B0092DF5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */; };
 		3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */; };
-		3AD48E831B2DF9DE00AAB523 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E821B2DF9DE00AAB523 /* QuestionCollectionViewCell.swift */; };
+		3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */; };
 		3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */; };
 		3AD6A6701B2CC50D00801033 /* StackCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66F1B2CC50D00801033 /* StackCollection.swift */; };
 		3AD6A6721B2CC5AA00801033 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A6711B2CC5AA00801033 /* Stack.swift */; };
@@ -50,12 +50,12 @@
 		3A2AB1C61B2B7B6600E03BA4 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2AB1CB1B2B7B6600E03BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
-		3A5FF5311B2E04A100CA02FE /* QuestionDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailsTableViewController.swift; sourceTree = "<group>"; };
+		3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3A9734A61B2C2C970092DF5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CartoGothicStd-Bold.ttf"; sourceTree = "<group>"; };
 		3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackDetailsCollectionViewController.swift; sourceTree = "<group>"; };
-		3AD48E821B2DF9DE00AAB523 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStackTableViewController.swift; sourceTree = "<group>"; };
 		3AD6A66F1B2CC50D00801033 /* StackCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackCollection.swift; sourceTree = "<group>"; };
 		3AD6A6711B2CC5AA00801033 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 				3A1869F41B2C2AF0008E779A /* HomeViewController.swift */,
 				3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */,
 				3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */,
-				3AD48E821B2DF9DE00AAB523 /* QuestionCollectionViewCell.swift */,
-				3A5FF5311B2E04A100CA02FE /* QuestionDetailsTableViewController.swift */,
+				3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */,
+				3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -394,10 +394,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */,
-				3AD48E831B2DF9DE00AAB523 /* QuestionCollectionViewCell.swift in Sources */,
+				3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */,
 				3A1869F51B2C2AF0008E779A /* HomeViewController.swift in Sources */,
 				3A1814131B2CE94900F53AE2 /* StackTableViewCell.swift in Sources */,
-				3A5FF5321B2E04A100CA02FE /* QuestionDetailsTableViewController.swift in Sources */,
+				3A5FF5321B2E04A100CA02FE /* CardDetailsTableViewController.swift in Sources */,
 				3AD6A6721B2CC5AA00801033 /* Stack.swift in Sources */,
 				3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */,
 				3A1869F31B2C2AE6008E779A /* AppDelegate.swift in Sources */,
