@@ -27,8 +27,8 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
         
         var draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         draggableBackground.delegate = self
-        draggableBackground.cards = cards;
-        draggableBackground.loadCards();
+        draggableBackground.cards = cards
+        draggableBackground.loadCards()
         
         self.view.addSubview(draggableBackground)
     }

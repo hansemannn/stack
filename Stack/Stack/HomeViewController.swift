@@ -44,9 +44,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.stacks = PersistenceManager.sharedManager.findAllStacks()!
         self.numberOfStacks = self.stacks.count
         
-        self.addUI()
-        
-        print("\(numberOfStacks) Stapel vorhanden")
+        self.addUI()        
     }
     
     func addConstraints() {

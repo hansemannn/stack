@@ -42,7 +42,7 @@ class NewStackTableViewController: UITableViewController {
     }
     
     @IBAction func closeView(sender: UIBarButtonItem) {
-        self.stack.managedObjectContext?.deleteObject(self.stack);
+        self.stack.managedObjectContext?.deleteObject(self.stack)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -60,8 +60,11 @@ class NewStackTableViewController: UITableViewController {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
         
         if source.cardData != nil {
-            // should be something like this
-            //self.stack.addCard(source.card)
+            self.stack.addCard(source.cardData)
+            
+            var cell: UITableViewCell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0))!
+            cell.detailTextLabel!.text = "\(self.stack.cards.count) Karten"
+            self.tableView.reloadData()
         }
     }
 }

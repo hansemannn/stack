@@ -36,7 +36,7 @@ class PersistenceManager : NSObject {
     func createCard() -> Card {
         let newCard = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
         
-        return newCard
+        return newCard        
     }
     
     func findAllStacks() -> [Stack]? {

@@ -66,14 +66,13 @@ class DraggableView: UIView {
     }
     
     func setupView() -> Void {
-        self.layer.cornerRadius = 4;
-        self.layer.shadowRadius = 3;
-        self.layer.shadowOpacity = 0.1;
-        self.layer.shadowOffset = CGSizeMake(1, 1);
+        self.layer.cornerRadius = 4
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.1
+        self.layer.shadowOffset = CGSizeMake(1, 1)
     }
     
     func beingTapped(gestureRecognizer: UITapGestureRecognizer) -> Void {
-        println("tapped")
         if(self.isToggled == true) {
             self.information.text = self.data // Todo: Frage auslesen
         } else {

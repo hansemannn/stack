@@ -31,10 +31,11 @@ class CardDetailsTableViewController: UITableViewController {
     }
     
     func saveCard() {
-        let card = Card()
+        
+        var card: Card = PersistenceManager.sharedManager.createCard()
         card.question = questionField.text
         card.answer = answerField.text
-        
+                
         self.cardData = card
     }
     
