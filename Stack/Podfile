@@ -2,6 +2,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 pod 'Snapkit', '~> 0.11.0'
-pod 'MDCSwipeToChoose'
 
 use_frameworks!

@@ -48,10 +48,8 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework 'MDCSwipeToChoose.framework'
   install_framework 'SnapKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework 'MDCSwipeToChoose.framework'
   install_framework 'SnapKit.framework'
 fi

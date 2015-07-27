@@ -1,13 +1,10 @@
 PODS:
-  - MDCSwipeToChoose (0.2.2)
   - SnapKit (0.11.0)
 
 DEPENDENCIES:
-  - MDCSwipeToChoose
   - Snapkit (~> 0.11.0)
 
 SPEC CHECKSUMS:
-  MDCSwipeToChoose: 715aefacd3cc884c448fcdc70638c04a3056408c
   SnapKit: 5194d53cee209d337a989919ff66a70b7aa3dda3
 
 COCOAPODS: 0.36.4

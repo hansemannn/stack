@@ -1,6 +1,0 @@
-framework module MDCSwipeToChoose {
-  umbrella header "Pods-MDCSwipeToChoose-umbrella.h"
-
-  export *
-  module * { export * }
-}
