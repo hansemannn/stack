@@ -21,6 +21,10 @@
 		3A5FF5321B2E04A100CA02FE /* CardDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */; };
 		3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */; };
 		3A9734AE1B2C363B0092DF5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */; };
+		3AA1E3921B668D8B00EF2346 /* SwipeStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1E3911B668D8B00EF2346 /* SwipeStackViewController.swift */; };
+		3AA1E3941B668E8B00EF2346 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1E3931B668E8B00EF2346 /* DraggableView.swift */; };
+		3AA1E3971B668EE000EF2346 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1E3961B668EE000EF2346 /* DraggableViewBackground.swift */; };
+		3AA1E3991B668EFA00EF2346 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1E3981B668EFA00EF2346 /* OverlayView.swift */; };
 		3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */; };
 		3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */; };
 		3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */; };
@@ -56,6 +60,10 @@
 		3A9734A61B2C2C970092DF5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CartoGothicStd-Bold.ttf"; sourceTree = "<group>"; };
 		3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		3AA1E3911B668D8B00EF2346 /* SwipeStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeStackViewController.swift; sourceTree = "<group>"; };
+		3AA1E3931B668E8B00EF2346 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		3AA1E3961B668EE000EF2346 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
+		3AA1E3981B668EFA00EF2346 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackDetailsCollectionViewController.swift; sourceTree = "<group>"; };
 		3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStackTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 				3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */,
 				3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */,
 				3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */,
+				3AA1E3951B668EAF00EF2346 /* SwipeStack */,
 				3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */,
 			);
 			name = Controllers;
@@ -222,6 +231,17 @@
 				3A9734AD1B2C363B0092DF5A /* UIColorExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		3AA1E3951B668EAF00EF2346 /* SwipeStack */ = {
+			isa = PBXGroup;
+			children = (
+				3AA1E3931B668E8B00EF2346 /* DraggableView.swift */,
+				3AA1E3911B668D8B00EF2346 /* SwipeStackViewController.swift */,
+				3AA1E3961B668EE000EF2346 /* DraggableViewBackground.swift */,
+				3AA1E3981B668EFA00EF2346 /* OverlayView.swift */,
+			);
+			name = SwipeStack;
 			sourceTree = "<group>";
 		};
 		3AD6A6731B2CC5BB00801033 /* Entities */ = {
@@ -405,11 +425,15 @@
 				3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */,
 				3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */,
 				3A1869F51B2C2AF0008E779A /* HomeViewController.swift in Sources */,
+				3AA1E3921B668D8B00EF2346 /* SwipeStackViewController.swift in Sources */,
 				3A1814131B2CE94900F53AE2 /* StackTableViewCell.swift in Sources */,
 				3A5FF5321B2E04A100CA02FE /* CardDetailsTableViewController.swift in Sources */,
-				30AB0C4B1B66A02500EC9B3E /* Stack.swift in Sources */,
-				3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */,
 				30AB0C4D1B66A02500EC9B3E /* Card.swift in Sources */,
+				3AD6A6721B2CC5AA00801033 /* Stack.swift in Sources */,
+				3AA1E3941B668E8B00EF2346 /* DraggableView.swift in Sources */,
+				3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */,
+				3AA1E3991B668EFA00EF2346 /* OverlayView.swift in Sources */,
+				3AA1E3971B668EE000EF2346 /* DraggableViewBackground.swift in Sources */,
 				3A1869F31B2C2AE6008E779A /* AppDelegate.swift in Sources */,
 				3A2AB1B71B2B7B6600E03BA4 /* Stack.xcdatamodeld in Sources */,
 				3AD6A6701B2CC50D00801033 /* PersistenceManager.swift in Sources */,

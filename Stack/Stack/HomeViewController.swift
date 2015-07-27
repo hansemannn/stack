@@ -22,6 +22,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var stacks = []
     var numberOfStacks: Int!
+
+    @IBAction func openSwipeView(sender: UIBarButtonItem) {
+   
+    }
     
     // MARK: - View lifecycle
     
