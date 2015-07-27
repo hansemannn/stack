@@ -10,4 +10,6 @@ import UIKit
 
 class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var questionLabel: UILabel!
+    
+    var card: Card!
 }

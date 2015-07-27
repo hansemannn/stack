@@ -3,6 +3,7 @@
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stack" inverseName="cards" inverseEntity="Stack" syncable="YES"/>
     </entity>
@@ -11,7 +12,7 @@
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="stack" inverseEntity="Card" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-0" positionY="-112" width="128" height="103"/>
+        <element name="Card" positionX="-0" positionY="-112" width="128" height="120"/>
         <element name="Stack" positionX="-243" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

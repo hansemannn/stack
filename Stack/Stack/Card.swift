@@ -15,6 +15,7 @@ class Card: NSManagedObject {
     @NSManaged var answer: String
     @NSManaged var category_id: NSNumber
     @NSManaged var question: String
+    @NSManaged var completed: Bool
     @NSManaged var stack: Stack
 
 }

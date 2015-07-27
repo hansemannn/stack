@@ -11,6 +11,7 @@ import UIKit
 class StackDetailsCollectionViewController: UICollectionViewController {
     
     var stack : Stack!
+    var selectedItemIndex:NSIndexPath!
     
     @IBAction func unwindNewCardToStack(segue: UIStoryboardSegue) {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
@@ -43,6 +44,7 @@ class StackDetailsCollectionViewController: UICollectionViewController {
 
         let allCards: [Card] = self.stack.cards.allObjects as! [Card]
         cell.questionLabel.text = allCards[indexPath.row].question
+        cell.card = allCards[indexPath.row]
         
         return cell
     }
@@ -51,15 +53,24 @@ class StackDetailsCollectionViewController: UICollectionViewController {
         return UICollectionReusableView()
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.selectedItemIndex = indexPath
+    }
+    
     // MARK: - Prepare for segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ShowSwipeViewSegue") {
-            
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
             var newStackVC: SwipeStackViewController = naviVC.topViewController as! SwipeStackViewController
             let newStack = PersistenceManager.sharedManager.createStack()
             newStackVC.stack = self.stack
+        } else if(segue.identifier == "ShowDetailSegue") {
+            var _sender:CardCollectionViewCell = sender as! CardCollectionViewCell
+
+            let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
+            var cardDetailsVC: CardDetailsTableViewController = naviVC.topViewController as! CardDetailsTableViewController
+            cardDetailsVC.cardData = _sender.card
         }
     }
 }

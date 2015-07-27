@@ -90,6 +90,10 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func cardSwipedLeft(card: UIView) -> Void {
+        
+        var card: Card = loadedCards[0].data
+        card.completed = false
+        
         loadedCards.removeAtIndex(0)
         
         if cardsLoadedIndex < allCards.count {
@@ -102,6 +106,10 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func cardSwipedRight(card: UIView) -> Void {
+        
+        var card: Card = loadedCards[0].data
+        card.completed = true
+                
         loadedCards.removeAtIndex(0)
         
         if cardsLoadedIndex < allCards.count {

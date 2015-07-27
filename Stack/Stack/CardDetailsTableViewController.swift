@@ -30,6 +30,14 @@ class CardDetailsTableViewController: UITableViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if(self.cardData != nil) {
+            self.navigationController?.navigationBar.topItem?.title = "Karte bearbeiten"
+            self.questionField.text = self.cardData.question
+            self.answerField.text = self.cardData.answer
+        }
+    }
+    
     func saveCard() {
         
         var card: Card = PersistenceManager.sharedManager.createCard()

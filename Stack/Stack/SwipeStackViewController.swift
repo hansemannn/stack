@@ -19,9 +19,7 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cards = self.stack.cards
-        
-        self.navigationController?.navigationBar.topItem?.title = "\(stack.name) (\(cards.count) Karten)"
+        self.navigationController?.navigationBar.topItem?.title = "\(stack.name) (\(self.stack.cards.count) Karten)"
         
         var draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         draggableBackground.delegate = self
@@ -37,9 +35,25 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
     
     func stackChanged(cardsLeft: Int) {
         if(cardsLeft == 0) {
+            
+            // Erzeugt komischerweise ein weiteren leeren Stack
+            // PersistenceManager.sharedManager.persistAll()
+            
+            var completedCards = 0
+            var canceledCards = 0
+            
+            for(var i = 0; i < self.stack.cards.count; i++) {
+                let currentCard: Card = self.stack.cards.allObjects[i] as! Card
+                if(currentCard.completed == true) {
+                    completedCards++
+                } else {
+                    canceledCards++
+                }
+            }
+            
             var alert = UIAlertController(
-                title: "Stapel abgeschlossen",
-                message: "\"\(self.stack.name)\" wurde abgeschlossen!",
+                title: "Übung abgeschlossen",
+                message: "Die Übung \"\(self.stack.name)\" ist abgeschlossen.\n\nErgebnis: \(completedCards) gewusst, \(canceledCards) abgebrochen",
                 preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) in
