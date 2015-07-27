@@ -24,6 +24,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var stacks = []
     var numberOfStacks: Int!
     
+    @IBAction func openSwipeView(sender: UIBarButtonItem) {
+   
+    }
+    
     override func viewDidLoad() {
         self.stacks = stackCollection.getStacks()!
         self.numberOfStacks = self.stacks.count

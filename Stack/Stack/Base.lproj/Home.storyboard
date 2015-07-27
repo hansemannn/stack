@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x96-pb-pEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x96-pb-pEd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -11,6 +11,47 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="GUP-e9-IxB">
+            <objects>
+                <navigationController id="SKh-LS-Hqh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xX-jv-NCW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="miN-x5-8Xv" kind="relationship" relationship="rootViewController" id="kHy-B1-Fkx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKN-O3-RsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-448"/>
+        </scene>
+        <!--Lernrunde-->
+        <scene sceneID="Bh0-go-mmQ">
+            <objects>
+                <viewController id="miN-x5-8Xv" customClass="SwipeStackViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="com-rR-A9c"/>
+                        <viewControllerLayoutGuide type="bottom" id="PAi-BG-yCB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lte-cE-3gB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lernrunde" id="mWo-mJ-iIN">
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="DQW-Ih-kL1">
+                            <connections>
+                                <action selector="closeView:" destination="miN-x5-8Xv" id="ppR-RR-3vN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6g-a1-yCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808" y="-440"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -110,7 +151,13 @@
                             <constraint firstItem="FTJ-kf-OcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ytu-4B-0Sc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lg6-VW-IwN"/>
+                    <navigationItem key="navigationItem" id="lg6-VW-IwN">
+                        <barButtonItem key="rightBarButtonItem" title="Swipe View" id="c2a-Bt-1D3">
+                            <connections>
+                                <segue destination="SKh-LS-Hqh" kind="presentation" id="ljt-37-q6Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="newStackButton" destination="w3c-OD-cel" id="PVj-iy-awr"/>
                         <outlet property="tableView" destination="FTJ-kf-OcF" id="tOY-VL-Fpr"/>
