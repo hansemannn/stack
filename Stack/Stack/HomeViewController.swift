@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.addUI()
         
-        println("\(numberOfStacks) Stapel vorhanden")
+        print("\(numberOfStacks) Stapel vorhanden")
     }
     
     func addConstraints() {
@@ -109,7 +109,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellData = self.stacks[indexPath.row] as? Stack
         
-        var cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
         
         cell.nameLabel.text = cellData!.name
         cell.numberOfCardsLabel.text = String(cellData!.cards.count)

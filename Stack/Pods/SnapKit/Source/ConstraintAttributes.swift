@@ -43,50 +43,50 @@ internal struct ConstraintAttributes: RawOptionSetType, BooleanType {
     }
     
     internal private(set) var rawValue: UInt
-    internal static var allZeros: ConstraintAttributes { return self(0) }
-    internal static func convertFromNilLiteral() -> ConstraintAttributes { return self(0) }
+    internal static var allZeros: ConstraintAttributes { return self.init(0) }
+    internal static func convertFromNilLiteral() -> ConstraintAttributes { return self.init(0) }
     internal var boolValue: Bool { return self.rawValue != 0 }
     
     internal func toRaw() -> UInt { return self.rawValue }
-    internal static func fromRaw(raw: UInt) -> ConstraintAttributes? { return self(raw) }
-    internal static func fromMask(raw: UInt) -> ConstraintAttributes { return self(raw) }
+    internal static func fromRaw(raw: UInt) -> ConstraintAttributes? { return self.init(raw) }
+    internal static func fromMask(raw: UInt) -> ConstraintAttributes { return self.init(raw) }
     
     // normal
     
-    internal static var None: ConstraintAttributes { return self(0) }
-    internal static var Left: ConstraintAttributes { return self(1) }
-    internal static var Top: ConstraintAttributes {  return self(2) }
-    internal static var Right: ConstraintAttributes { return self(4) }
-    internal static var Bottom: ConstraintAttributes { return self(8) }
-    internal static var Leading: ConstraintAttributes { return self(16) }
-    internal static var Trailing: ConstraintAttributes { return self(32) }
-    internal static var Width: ConstraintAttributes { return self(64) }
-    internal static var Height: ConstraintAttributes { return self(128) }
-    internal static var CenterX: ConstraintAttributes { return self(256) }
-    internal static var CenterY: ConstraintAttributes { return self(512) }
-    internal static var Baseline: ConstraintAttributes { return self(1024) }
+    internal static var None: ConstraintAttributes { return self.init(0) }
+    internal static var Left: ConstraintAttributes { return self.init(1) }
+    internal static var Top: ConstraintAttributes {  return self.init(2) }
+    internal static var Right: ConstraintAttributes { return self.init(4) }
+    internal static var Bottom: ConstraintAttributes { return self.init(8) }
+    internal static var Leading: ConstraintAttributes { return self.init(16) }
+    internal static var Trailing: ConstraintAttributes { return self.init(32) }
+    internal static var Width: ConstraintAttributes { return self.init(64) }
+    internal static var Height: ConstraintAttributes { return self.init(128) }
+    internal static var CenterX: ConstraintAttributes { return self.init(256) }
+    internal static var CenterY: ConstraintAttributes { return self.init(512) }
+    internal static var Baseline: ConstraintAttributes { return self.init(1024) }
     
     #if os(iOS)
-    internal static var FirstBaseline: ConstraintAttributes { return self(2048) }
-    internal static var LeftMargin: ConstraintAttributes { return self(4096) }
-    internal static var RightMargin: ConstraintAttributes { return self(8192) }
-    internal static var TopMargin: ConstraintAttributes { return self(16384) }
-    internal static var BottomMargin: ConstraintAttributes { return self(32768) }
-    internal static var LeadingMargin: ConstraintAttributes { return self(65536) }
-    internal static var TrailingMargin: ConstraintAttributes { return self(131072) }
-    internal static var CenterXWithinMargins: ConstraintAttributes { return self(262144) }
-    internal static var CenterYWithinMargins: ConstraintAttributes { return self(524288) }
+    internal static var FirstBaseline: ConstraintAttributes { return self.init(2048) }
+    internal static var LeftMargin: ConstraintAttributes { return self.init(4096) }
+    internal static var RightMargin: ConstraintAttributes { return self.init(8192) }
+    internal static var TopMargin: ConstraintAttributes { return self.init(16384) }
+    internal static var BottomMargin: ConstraintAttributes { return self.init(32768) }
+    internal static var LeadingMargin: ConstraintAttributes { return self.init(65536) }
+    internal static var TrailingMargin: ConstraintAttributes { return self.init(131072) }
+    internal static var CenterXWithinMargins: ConstraintAttributes { return self.init(262144) }
+    internal static var CenterYWithinMargins: ConstraintAttributes { return self.init(524288) }
     #endif
     
     // aggregates
     
-    internal static var Edges: ConstraintAttributes { return self(15) }
-    internal static var Size: ConstraintAttributes { return self(192) }
-    internal static var Center: ConstraintAttributes { return self(768) }
+    internal static var Edges: ConstraintAttributes { return self.init(15) }
+    internal static var Size: ConstraintAttributes { return self.init(192) }
+    internal static var Center: ConstraintAttributes { return self.init(768) }
     
     #if os(iOS)
-    internal static var Margins: ConstraintAttributes { return self(61440) }
-    internal static var CenterWithinMargins: ConstraintAttributes { return self(786432) }
+    internal static var Margins: ConstraintAttributes { return self.init(61440) }
+    internal static var CenterWithinMargins: ConstraintAttributes { return self.init(786432) }
     #endif
     
     internal var layoutAttributes:[NSLayoutAttribute] {

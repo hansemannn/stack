@@ -31,11 +31,13 @@ class StackCollection : NSObject {
         
         //Save managed context
         var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
-        } else {
-            println("\(stack.name) wurde erfolgreich gespeichert!")
+        do {
+            try managedContext.save()
+            print("\(stack.name) wurde erfolgreich gespeichert!")
             return true
+        } catch let error1 as NSError {
+            error = error1
+            print("Could not save \(error), \(error?.userInfo)")
         }
 
         return false
@@ -48,14 +50,14 @@ class StackCollection : NSObject {
         
         //Create fetch request to get all entries of the profile table
         let fetchRequest = NSFetchRequest(entityName: "Stack")
-        var error: NSError?
+        let error: NSError?
                 
         // Execute the fetch request, and cast the results to an array of LogItem objects
-        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Stack] {
-            println(fetchResults)
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest) as? [Stack] {
+            print(fetchResults)
             return fetchResults
         } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+            print("Could not fetch \(error), \(error!.userInfo)")
             return nil
         }
     }

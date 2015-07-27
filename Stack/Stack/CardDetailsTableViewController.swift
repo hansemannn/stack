@@ -23,7 +23,7 @@ class CardDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func deleteCard(sender: UIBarButtonItem) {
-        var alert = UIAlertController(title: "Karte löschen", message: "Möchtest du die Karte wirklich löschen?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let alert = UIAlertController(title: "Karte löschen", message: "Möchtest du die Karte wirklich löschen?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Unwiderruflich löschen", style: UIAlertActionStyle.Destructive, handler: nil))
         
@@ -31,7 +31,7 @@ class CardDetailsTableViewController: UITableViewController {
     }
     
     func saveCard() {
-        var card = Card()
+        let card = Card()
         card.question = questionField.text
         card.answer = answerField.text
         
