@@ -10,39 +10,13 @@ import UIKit
 
 class NewStackTableViewController: UITableViewController {
 
+    var stack: Stack!
+    
     @IBOutlet weak var saveButton: UIButton!
 
     @IBOutlet weak var nameField: UITextField!
-
-    var collection = StackCollection.instance
-    var cards: [Card] = []
-
-    @IBAction func saveStack() {
-        if self.nameField.text.isEmpty == true {
-            return
-        }
-        
-        var stack = Stack()
-        stack.name = self.nameField.text
-        stack.cards = self.cards
-        
-        let success : Bool = collection.saveStack(stack)
-
-        if success == true {
-            var alert = UIAlertController(
-                title: "Speichern erfolgreich",
-                message: "\"\(self.nameField.text)\" wurde erfolgreich gespeichert!",
-                preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-    }
     
-    @IBAction func closeView(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +25,25 @@ class NewStackTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func saveStack() {
+        if self.nameField.text.isEmpty == true {
+            return
+        }
+        
+        self.stack.name = self.nameField.text
+        
+        PersistenceManager.sharedManager.persistAll()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func closeView(sender: UIBarButtonItem) {
+        self.stack.managedObjectContext?.deleteObject(self.stack);
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -65,9 +58,10 @@ class NewStackTableViewController: UITableViewController {
     
     @IBAction func unwindNewCardToList(segue: UIStoryboardSegue) {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
-
+        
         if source.cardData != nil {
-            self.cards.append(source.cardData)
-        }        
+            // should be something like this
+            //self.stack.addCard(source.card)
+        }
     }
 }

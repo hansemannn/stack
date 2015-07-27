@@ -20,12 +20,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBInspectable lazy var emptyImageView = UIImageView()
     @IBInspectable lazy var emptyLabel = UILabel()
     
-    var stackCollection = StackCollection.instance
     var stacks = []
     var numberOfStacks: Int!
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
-        self.stacks = stackCollection.getStacks()!
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
         self.numberOfStacks = self.stacks.count
         
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.stacks = stackCollection.getStacks()!
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
         self.numberOfStacks = self.stacks.count
         
         self.addUI()
@@ -92,14 +93,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - TableViewDataSource
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let recordCount = self.numberOfStacks
         
         return recordCount!
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -117,12 +116,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    // MARK: - TableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    // MARK: - Prepare for segue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*if(segue.identifier == "DetailSegue") {
-            println("segue called")
-            var vc : StackDetailsCollectionViewController = segue.destinationViewController as! StackDetailsCollectionViewController
-            vc.stack = sender as! Stack
-        }*/
+        if (segue.identifier == "NewStackSegue") {
+            let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
+            let newStackVC: NewStackTableViewController = naviVC.topViewController as! NewStackTableViewController
+            let newStack = PersistenceManager.sharedManager.createStack()
+            newStackVC.stack = newStack
+        }
     }
 }
 

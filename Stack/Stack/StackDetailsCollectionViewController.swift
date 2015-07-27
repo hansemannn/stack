@@ -10,7 +10,6 @@ import UIKit
 
 class StackDetailsCollectionViewController: UICollectionViewController {
     
-    var stackCollection = StackCollection.instance
     var stack : Stack!
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
