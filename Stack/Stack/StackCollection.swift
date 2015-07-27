@@ -30,16 +30,9 @@ class StackCollection : NSObject {
         newStack.cards = stack.cards
         
         //Save managed context
-        var error: NSError?
-        do {
-            try managedContext.save()
-            print("\(stack.name) wurde erfolgreich gespeichert!")
-            return true
-        } catch let error1 as NSError {
-            error = error1
-            print("Could not save \(error), \(error?.userInfo)")
-        }
-
+        var error: NSErrorPointer = NSErrorPointer()
+        managedContext.save(error)
+        
         return false
     }
     
@@ -50,14 +43,14 @@ class StackCollection : NSObject {
         
         //Create fetch request to get all entries of the profile table
         let fetchRequest = NSFetchRequest(entityName: "Stack")
-        let error: NSError?
+        let error: NSErrorPointer = NSErrorPointer()
                 
         // Execute the fetch request, and cast the results to an array of LogItem objects
-        if let fetchResults = managedContext.executeFetchRequest(fetchRequest) as? [Stack] {
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: error) as? [Stack] {
             print(fetchResults)
             return fetchResults
         } else {
-            print("Could not fetch \(error), \(error!.userInfo)")
+            print("Could not fetch \(error), \(error.debugDescription)")
             return nil
         }
     }
