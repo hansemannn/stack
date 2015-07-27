@@ -12,19 +12,54 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     
     var stack : Stack!
     
+    @IBAction func unwindNewCardToStack(segue: UIStoryboardSegue) {
+        let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
+        
+        if source.cardData != nil {
+            self.stack.addCard(source.cardData)
+            PersistenceManager.sharedManager.persistAll()
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        var title: String!
+        
+        if(stack.cards.count == 1) {
+            title = "\(stack.name) (Eine Karte)"
+        } else {
+            title = "\(stack.name) (\(stack.cards.count) Karten)"
+        }
+        
+        self.navigationController?.navigationBar.topItem?.title = title
+    }
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15//stack.cards.count
+        return stack.cards.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = self.collectionView?.dequeueReusableCellWithReuseIdentifier("QuestionCell", forIndexPath: indexPath) as! CardCollectionViewCell
-        
-        cell.questionLabel.text = "Test"
+
+        let allCards: [Card] = self.stack.cards.allObjects as! [Card]
+        cell.questionLabel.text = allCards[indexPath.row].question
         
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         return UICollectionReusableView()
+    }
+    
+    // MARK: - Prepare for segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ShowSwipeViewSegue") {
+            
+            let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
+            var newStackVC: SwipeStackViewController = naviVC.topViewController as! SwipeStackViewController
+            let newStack = PersistenceManager.sharedManager.createStack()
+            newStackVC.stack = self.stack
+        }
     }
 }

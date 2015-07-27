@@ -21,7 +21,7 @@ class CardDetailsTableViewController: UITableViewController {
     @IBAction func closeView(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+        
     @IBAction func deleteCard(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Karte löschen", message: "Möchtest du die Karte wirklich löschen?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertActionStyle.Cancel, handler: nil))

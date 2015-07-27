@@ -22,10 +22,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var stacks = []
     var numberOfStacks: Int!
-
-    @IBAction func openSwipeView(sender: UIBarButtonItem) {
-   
-    }
     
     // MARK: - View lifecycle
     
@@ -114,6 +110,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.nameLabel.text = cellData!.name
         cell.numberOfCardsLabel.text = String(cellData!.cards.count)
+        cell.stack = cellData
         
         return cell
     }
@@ -121,17 +118,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - TableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
     
     // MARK: - Prepare for segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "NewStackSegue") {
+            
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
-            let newStackVC: NewStackTableViewController = naviVC.topViewController as! NewStackTableViewController
+            var newStackVC: NewStackTableViewController = naviVC.topViewController as! NewStackTableViewController
             let newStack = PersistenceManager.sharedManager.createStack()
             newStackVC.stack = newStack
+        } else if(segue.identifier == "StackDetailSegue") {
+            
+            var indexPath = self.tableView.indexPathForSelectedRow()
+            let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as! StackTableViewCell
+            
+            let stackDetailsNavigationController: UINavigationController = segue.destinationViewController as! UINavigationController
+            var stackDetailsViewController: StackDetailsCollectionViewController = stackDetailsNavigationController.topViewController as! StackDetailsCollectionViewController
+            stackDetailsViewController.stack = cell.stack
         }
     }
 }

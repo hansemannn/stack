@@ -28,7 +28,7 @@ class DraggableView: UIView {
     var originPoint: CGPoint!
     var overlayView: OverlayView!
     var information: UILabel!
-    var data: String!
+    var data: Card!
     var isToggled: Bool!
     var xFromCenter: Float!
     var yFromCenter: Float!
@@ -74,9 +74,9 @@ class DraggableView: UIView {
     
     func beingTapped(gestureRecognizer: UITapGestureRecognizer) -> Void {
         if(self.isToggled == true) {
-            self.information.text = self.data // Todo: Frage auslesen
+            self.information.text = self.data.question
         } else {
-            self.information.text = "Antwort!" // Todo: Antwort auslesen
+            self.information.text = self.data.answer
         }
         
         self.isToggled = !self.isToggled

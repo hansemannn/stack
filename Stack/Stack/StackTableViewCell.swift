@@ -11,4 +11,6 @@ import UIKit
 class StackTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberOfCardsLabel: UILabel!
+    
+    var stack: Stack!
 }

@@ -14,7 +14,7 @@ protocol EmptyStackDelegate {
 }
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
-    var cards: [String]!
+    var cards: [Card]!
     var allCards: [DraggableView]!
     var delegate: EmptyStackDelegate!
     
@@ -61,7 +61,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         var draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
        
         draggableView.data = cards[index]
-        draggableView.information.text = cards[index]
+        draggableView.information.text = cards[index].question
         draggableView.delegate = self
         
         return draggableView

@@ -46,7 +46,6 @@ class PersistenceManager : NSObject {
                 
         // Execute the fetch request, and cast the results to an array of LogItem objects
         if let fetchResults = self.managedObjectContext.executeFetchRequest(fetchRequest, error: error) as? [Stack] {
-            print(fetchResults)
             return fetchResults
         } else {
             print("Could not fetch \(error), \(error.debugDescription)")
