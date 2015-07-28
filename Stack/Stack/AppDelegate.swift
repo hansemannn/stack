@@ -43,6 +43,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    // MARK: - WatchKit delegate
+
+    func application(application: UIApplication,
+        handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
+         reply: (([NSObject : AnyObject]!) -> Void)!) {
+
+        let stacks: [Stack] = []//PersistenceManager.sharedManager.findAllStacks()!
+
+        if(stacks.count == 0) {
+            reply(["Models" : ["Kein Stapel"]])
+            return;
+        }
+
+            
+        var stacksAsStringArray: [String]!
+        
+        for(var i = 0; i < stacks.count; i++) {
+            stacksAsStringArray.append(stacks[i].name)
+        }
+            
+        reply(["Models" : stacksAsStringArray])
+    }
+    
+    func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
+        
+    }
 
     // MARK: - Core Data stack
 

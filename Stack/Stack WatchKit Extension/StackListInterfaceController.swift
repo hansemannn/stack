@@ -8,11 +8,12 @@
 
 import WatchKit
 import Foundation
+import CoreData
 
 class StackListInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var tableView: WKInterfaceTable!
-    let stacks = ["Mathe", "Physik"]
+    var stacks: [String] = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -20,19 +21,30 @@ class StackListInterfaceController: WKInterfaceController {
     
     func loadTableData() {
         
-        self.tableView.setNumberOfRows(stacks.count, withRowType: "StackCell")
-        
-        for(index,name) in enumerate(stacks) {
-            println(name)
-            var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
-            row?.headlineLabel.setText(name)
+        let dictionary = ["Models":"Stack"]
+
+        WKInterfaceController.openParentApplication(dictionary) { (replyInfo, error) -> Void in
+
+            if let castedResponseDictionary = replyInfo as? [String: [String]] {
+                
+                self.stacks = castedResponseDictionary["Models"]!
+                
+                self.tableView.setNumberOfRows(self.stacks.count, withRowType: "StackCell")
+                
+                for(index,name) in enumerate(self.stacks) {
+                    println(name)
+                    var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
+                    row?.headlineLabel.setText(name)
+                }
+                
+            }
         }
     }
 
     override func willActivate() {
-        loadTableData()
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        loadTableData()
     }
 
     override func didDeactivate() {
