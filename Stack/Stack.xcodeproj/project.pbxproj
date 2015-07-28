@@ -17,6 +17,20 @@
 		3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BA1B2B7B6600E03BA4 /* Home.storyboard */; };
 		3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BF1B2B7B6600E03BA4 /* LaunchScreen.xib */; };
 		3A2AB1CD1B2B7B6600E03BA4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */; };
+		3A39320F1B67822700D2A1CB /* CardRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */; };
+		3A3932111B67829E00D2A1CB /* CardListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */; };
+		3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */; };
+		3A3932171B6786CC00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
+		3A3932181B6786CD00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
+		3A48ED841B66E66A0065C137 /* StackListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED831B66E66A0065C137 /* StackListInterfaceController.swift */; };
+		3A48ED861B66E66A0065C137 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED851B66E66A0065C137 /* NotificationController.swift */; };
+		3A48ED881B66E66A0065C137 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED871B66E66A0065C137 /* GlanceController.swift */; };
+		3A48ED8A1B66E66A0065C137 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A48ED891B66E66A0065C137 /* Images.xcassets */; };
+		3A48ED8E1B66E66A0065C137 /* Stack WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 3A48ED8D1B66E66A0065C137 /* Stack WatchKit App.app */; };
+		3A48ED961B66E66A0065C137 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A48ED941B66E66A0065C137 /* Interface.storyboard */; };
+		3A48ED981B66E66A0065C137 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A48ED971B66E66A0065C137 /* Images.xcassets */; };
+		3A48ED9B1B66E66A0065C137 /* Stack WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A48ED7E1B66E66A0065C137 /* Stack WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3A48EDA41B66E91B0065C137 /* StackRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48EDA31B66E91B0065C137 /* StackRowTableViewController.swift */; };
 		3A5FF5321B2E04A100CA02FE /* CardDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */; };
 		3A6E44261B66C29A001B5ED7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB0C4A1B66A02500EC9B3E /* Stack.swift */; };
 		3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */; };
@@ -39,7 +53,35 @@
 			remoteGlobalIDString = 3A2AB1AD1B2B7B6600E03BA4;
 			remoteInfo = Stack;
 		};
+		3A48ED8F1B66E66A0065C137 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A2AB1A61B2B7B6600E03BA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A48ED8C1B66E66A0065C137;
+			remoteInfo = "Stack WatchKit App";
+		};
+		3A48ED991B66E66A0065C137 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A2AB1A61B2B7B6600E03BA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A48ED7D1B66E66A0065C137;
+			remoteInfo = "Stack WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A48EDA21B66E66A0065C137 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3A48ED9B1B66E66A0065C137 /* Stack WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		201BD7F39AD5FFE52A8EAC73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +98,21 @@
 		3A2AB1C61B2B7B6600E03BA4 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2AB1CB1B2B7B6600E03BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowTableViewController.swift; sourceTree = "<group>"; };
+		3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListInterfaceController.swift; sourceTree = "<group>"; };
+		3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsInterfaceController.swift; sourceTree = "<group>"; };
+		3A48ED7E1B66E66A0065C137 /* Stack WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Stack WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A48ED811B66E66A0065C137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A48ED821B66E66A0065C137 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3A48ED831B66E66A0065C137 /* StackListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackListInterfaceController.swift; sourceTree = "<group>"; };
+		3A48ED851B66E66A0065C137 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3A48ED871B66E66A0065C137 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		3A48ED891B66E66A0065C137 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3A48ED8D1B66E66A0065C137 /* Stack WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stack WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A48ED931B66E66A0065C137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A48ED951B66E66A0065C137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3A48ED971B66E66A0065C137 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3A48EDA31B66E91B0065C137 /* StackRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRowTableViewController.swift; sourceTree = "<group>"; };
 		3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3A9734A61B2C2C970092DF5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CartoGothicStd-Bold.ttf"; sourceTree = "<group>"; };
@@ -82,6 +139,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3A2AB1C31B2B7B6600E03BA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A48ED7B1B66E66A0065C137 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -164,6 +228,8 @@
 			children = (
 				3A2AB1B01B2B7B6600E03BA4 /* Stack */,
 				3A2AB1C91B2B7B6600E03BA4 /* StackTests */,
+				3A48ED7F1B66E66A0065C137 /* Stack WatchKit Extension */,
+				3A48ED911B66E66A0065C137 /* Stack WatchKit App */,
 				3A2AB1AF1B2B7B6600E03BA4 /* Products */,
 				6CE7D1A1A130A6691567F588 /* Pods */,
 				FF21D03EBB6F5FC4B8BD3910 /* Frameworks */,
@@ -175,6 +241,8 @@
 			children = (
 				3A2AB1AE1B2B7B6600E03BA4 /* Stack.app */,
 				3A2AB1C61B2B7B6600E03BA4 /* StackTests.xctest */,
+				3A48ED7E1B66E66A0065C137 /* Stack WatchKit Extension.appex */,
+				3A48ED8D1B66E66A0065C137 /* Stack WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +280,73 @@
 			isa = PBXGroup;
 			children = (
 				3A2AB1CB1B2B7B6600E03BA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A3932121B67844800D2A1CB /* StackList */ = {
+			isa = PBXGroup;
+			children = (
+				3A48ED831B66E66A0065C137 /* StackListInterfaceController.swift */,
+				3A48EDA31B66E91B0065C137 /* StackRowTableViewController.swift */,
+			);
+			name = StackList;
+			sourceTree = "<group>";
+		};
+		3A3932131B67844F00D2A1CB /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */,
+				3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */,
+			);
+			name = CardList;
+			sourceTree = "<group>";
+		};
+		3A3932141B67845A00D2A1CB /* CardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */,
+			);
+			name = CardDetails;
+			sourceTree = "<group>";
+		};
+		3A48ED7F1B66E66A0065C137 /* Stack WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3A3932121B67844800D2A1CB /* StackList */,
+				3A3932131B67844F00D2A1CB /* CardList */,
+				3A3932141B67845A00D2A1CB /* CardDetails */,
+				3A48ED851B66E66A0065C137 /* NotificationController.swift */,
+				3A48ED871B66E66A0065C137 /* GlanceController.swift */,
+				3A48ED891B66E66A0065C137 /* Images.xcassets */,
+				3A48ED801B66E66A0065C137 /* Supporting Files */,
+			);
+			path = "Stack WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		3A48ED801B66E66A0065C137 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A48ED811B66E66A0065C137 /* Info.plist */,
+				3A48ED821B66E66A0065C137 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A48ED911B66E66A0065C137 /* Stack WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				3A48ED941B66E66A0065C137 /* Interface.storyboard */,
+				3A48ED971B66E66A0065C137 /* Images.xcassets */,
+				3A48ED921B66E66A0065C137 /* Supporting Files */,
+			);
+			path = "Stack WatchKit App";
+			sourceTree = "<group>";
+		};
+		3A48ED921B66E66A0065C137 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A48ED931B66E66A0065C137 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,10 +417,12 @@
 				3A2AB1AC1B2B7B6600E03BA4 /* Resources */,
 				A83E19BB5BB40E7464CA1290 /* Embed Pods Frameworks */,
 				37664F95AEC42DA764AAF71E /* Copy Pods Resources */,
+				3A48EDA21B66E66A0065C137 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3A48ED9A1B66E66A0065C137 /* PBXTargetDependency */,
 			);
 			name = Stack;
 			productName = Stack;
@@ -310,6 +447,39 @@
 			productReference = 3A2AB1C61B2B7B6600E03BA4 /* StackTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3A48ED7D1B66E66A0065C137 /* Stack WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A48EDA11B66E66A0065C137 /* Build configuration list for PBXNativeTarget "Stack WatchKit Extension" */;
+			buildPhases = (
+				3A48ED7A1B66E66A0065C137 /* Sources */,
+				3A48ED7B1B66E66A0065C137 /* Frameworks */,
+				3A48ED7C1B66E66A0065C137 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A48ED901B66E66A0065C137 /* PBXTargetDependency */,
+			);
+			name = "Stack WatchKit Extension";
+			productName = "Stack WatchKit Extension";
+			productReference = 3A48ED7E1B66E66A0065C137 /* Stack WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		3A48ED8C1B66E66A0065C137 /* Stack WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A48EDA01B66E66A0065C137 /* Build configuration list for PBXNativeTarget "Stack WatchKit App" */;
+			buildPhases = (
+				3A48ED8B1B66E66A0065C137 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stack WatchKit App";
+			productName = "Stack WatchKit App";
+			productReference = 3A48ED8D1B66E66A0065C137 /* Stack WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,6 +496,12 @@
 					3A2AB1C51B2B7B6600E03BA4 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 3A2AB1AD1B2B7B6600E03BA4;
+					};
+					3A48ED7D1B66E66A0065C137 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3A48ED8C1B66E66A0065C137 = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -344,6 +520,8 @@
 			targets = (
 				3A2AB1AD1B2B7B6600E03BA4 /* Stack */,
 				3A2AB1C51B2B7B6600E03BA4 /* StackTests */,
+				3A48ED7D1B66E66A0065C137 /* Stack WatchKit Extension */,
+				3A48ED8C1B66E66A0065C137 /* Stack WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +542,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A48ED7C1B66E66A0065C137 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3932171B6786CC00D2A1CB /* Images.xcassets in Resources */,
+				3A48ED8A1B66E66A0065C137 /* Images.xcassets in Resources */,
+				3A48ED8E1B66E66A0065C137 /* Stack WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A48ED8B1B66E66A0065C137 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3932181B6786CD00D2A1CB /* Images.xcassets in Resources */,
+				3A48ED961B66E66A0065C137 /* Interface.storyboard in Resources */,
+				3A48ED981B66E66A0065C137 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +647,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A48ED7A1B66E66A0065C137 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A39320F1B67822700D2A1CB /* CardRowTableViewController.swift in Sources */,
+				3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */,
+				3A3932111B67829E00D2A1CB /* CardListInterfaceController.swift in Sources */,
+				3A48ED861B66E66A0065C137 /* NotificationController.swift in Sources */,
+				3A48ED841B66E66A0065C137 /* StackListInterfaceController.swift in Sources */,
+				3A48ED881B66E66A0065C137 /* GlanceController.swift in Sources */,
+				3A48EDA41B66E91B0065C137 /* StackRowTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -456,6 +668,16 @@
 			isa = PBXTargetDependency;
 			target = 3A2AB1AD1B2B7B6600E03BA4 /* Stack */;
 			targetProxy = 3A2AB1C71B2B7B6600E03BA4 /* PBXContainerItemProxy */;
+		};
+		3A48ED901B66E66A0065C137 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A48ED8C1B66E66A0065C137 /* Stack WatchKit App */;
+			targetProxy = 3A48ED8F1B66E66A0065C137 /* PBXContainerItemProxy */;
+		};
+		3A48ED9A1B66E66A0065C137 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A48ED7D1B66E66A0065C137 /* Stack WatchKit Extension */;
+			targetProxy = 3A48ED991B66E66A0065C137 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,6 +696,14 @@
 				3A2AB1C01B2B7B6600E03BA4 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		3A48ED941B66E66A0065C137 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A48ED951B66E66A0065C137 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -570,6 +800,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Stack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hansknoechel.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +815,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Stack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hansknoechel.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,6 +858,64 @@
 			};
 			name = Release;
 		};
+		3A48ED9C1B66E66A0065C137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Stack WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3A48ED9D1B66E66A0065C137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Stack WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3A48ED9E1B66E66A0065C137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Stack_WatchKit_Extension;
+				INFOPLIST_FILE = "Stack WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		3A48ED9F1B66E66A0065C137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Stack_WatchKit_Extension;
+				INFOPLIST_FILE = "Stack WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +942,24 @@
 			buildConfigurations = (
 				3A2AB1D41B2B7B6600E03BA4 /* Debug */,
 				3A2AB1D51B2B7B6600E03BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A48EDA01B66E66A0065C137 /* Build configuration list for PBXNativeTarget "Stack WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A48ED9E1B66E66A0065C137 /* Debug */,
+				3A48ED9F1B66E66A0065C137 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A48EDA11B66E66A0065C137 /* Build configuration list for PBXNativeTarget "Stack WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A48ED9C1B66E66A0065C137 /* Debug */,
+				3A48ED9D1B66E66A0065C137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
