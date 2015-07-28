@@ -120,6 +120,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.nameLabel.text = cellData!.name
         cell.numberOfCardsLabel.text = String(cellData!.cards.count)
         cell.stack = cellData
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 65, bottom: 0, right: 0)
         
         return cell
     }
@@ -158,9 +159,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             var indexPath = self.tableView.indexPathForSelectedRow()
             let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as! StackTableViewCell
             
-            let stackDetailsNavigationController: UINavigationController = segue.destinationViewController as! UINavigationController
-            var stackDetailsViewController: StackDetailsCollectionViewController = stackDetailsNavigationController.topViewController as! StackDetailsCollectionViewController
+            var stackDetailsViewController: StackDetailsCollectionViewController = segue.destinationViewController as! StackDetailsCollectionViewController
             stackDetailsViewController.stack = cell.stack
+            
+            
         }
     }
 }

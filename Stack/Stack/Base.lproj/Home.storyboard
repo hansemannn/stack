@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKN-O3-RsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="235"/>
+            <point key="canvasLocation" x="2495" y="235"/>
         </scene>
         <!--Lernrunde-->
         <scene sceneID="Bh0-go-mmQ">
@@ -42,6 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lernrunde" id="mWo-mJ-iIN">
                         <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="DQW-Ih-kL1">
+                            <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="closeView:" destination="miN-x5-8Xv" id="ppR-RR-3vN"/>
                             </connections>
@@ -50,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6g-a1-yCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955" y="243"/>
+            <point key="canvasLocation" x="3225" y="243"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -64,22 +65,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-OD-cel">
-                                <rect key="frame" x="196" y="484" width="209" height="43"/>
-                                <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="Hxg-gt-iZ6"/>
-                                    <constraint firstAttribute="width" constant="209" id="jce-oj-opz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Neuen Stapel anlegen">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Lki-VU-aed" kind="presentation" identifier="NewStackSegue" id="FUZ-Je-svf"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zAf-oF-yfg">
                                 <rect key="frame" x="213" y="104" width="174" height="76"/>
                                 <constraints>
@@ -88,21 +73,20 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FTJ-kf-OcF">
-                                <rect key="frame" x="0.0" y="194" width="600" height="212"/>
+                                <rect key="frame" x="0.0" y="194" width="600" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ZjT-Sn-8fn">
+                                    <rect key="frame" x="0.0" y="77" width="600" height="10"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StackCell" id="ajR-X0-3d3" customClass="StackTableViewCell" customModule="Stack" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ajR-X0-3d3" id="8lO-FX-koc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theoretische Informatik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lum-IP-Yk9">
-                                                    <rect key="frame" x="56" y="17" width="181" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Number-Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZSa-tH-VYT">
                                                     <rect key="frame" x="8" y="7" width="40" height="40"/>
                                                     <constraints>
@@ -114,6 +98,12 @@
                                                     <rect key="frame" x="19" y="18" width="19" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theoretische Informatik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lum-IP-Yk9">
+                                                    <rect key="frame" x="56" y="17" width="181" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -129,7 +119,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="lum-IP-Yk9" id="NXF-yc-agg"/>
                                             <outlet property="numberOfCardsLabel" destination="0K9-cF-LK5" id="b9i-dX-8Uy"/>
-                                            <segue destination="qRY-PP-Ftj" kind="show" identifier="StackDetailSegue" id="aFQ-tk-avH"/>
+                                            <segue destination="gHa-5q-1Jc" kind="show" identifier="StackDetailSegue" id="KIU-oy-2wy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -138,14 +128,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UiP-Tq-Q98"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-OD-cel">
+                                <rect key="frame" x="196" y="517" width="209" height="43"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Hxg-gt-iZ6"/>
+                                    <constraint firstAttribute="width" constant="209" id="jce-oj-opz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Neuen Stapel anlegen">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Lki-VU-aed" kind="presentation" identifier="NewStackSegue" id="FUZ-Je-svf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6fv-VW-n4e"/>
+                            <constraint firstItem="FTJ-kf-OcF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="35" id="6fv-VW-n4e"/>
                             <constraint firstItem="FTJ-kf-OcF" firstAttribute="top" secondItem="zAf-oF-yfg" secondAttribute="bottom" constant="14" id="M5v-Fo-Kan"/>
                             <constraint firstAttribute="centerX" secondItem="zAf-oF-yfg" secondAttribute="centerX" constant="-0.5" id="SG9-JM-Hkv"/>
                             <constraint firstItem="FTJ-kf-OcF" firstAttribute="centerX" secondItem="w3c-OD-cel" secondAttribute="centerX" id="bfk-0N-aon"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w3c-OD-cel" secondAttribute="bottom" constant="73" id="n3Z-uk-86s"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w3c-OD-cel" secondAttribute="bottom" constant="40" id="n3Z-uk-86s"/>
                             <constraint firstItem="zAf-oF-yfg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="owY-I0-eym"/>
                             <constraint firstAttribute="centerX" secondItem="w3c-OD-cel" secondAttribute="centerX" constant="-0.5" id="xFX-1K-S7Y"/>
                             <constraint firstItem="FTJ-kf-OcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ytu-4B-0Sc"/>
@@ -160,22 +166,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="243"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qeo-IG-w5v">
-            <objects>
-                <navigationController id="qRY-PP-Ftj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="laq-UG-qq6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="gHa-5q-1Jc" kind="relationship" relationship="rootViewController" id="6xF-VF-qLj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="olM-bk-a2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1808" y="243"/>
         </scene>
         <!--Laden ...-->
         <scene sceneID="AHA-IV-5Vw">
@@ -245,6 +235,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Laden ..." id="04Y-FH-12e">
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="ZBr-Mk-vPF">
+                            <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="SKh-LS-Hqh" kind="presentation" identifier="ShowSwipeViewSegue" id="BnN-iF-Qp8"/>
                             </connections>
@@ -256,9 +247,9 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGa-k6-Vun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="243"/>
+            <point key="canvasLocation" x="1773" y="243"/>
         </scene>
-        <!--Karte-->
+        <!--Card Details Table View Controller-->
         <scene sceneID="oFu-YY-uDG">
             <objects>
                 <tableViewController id="ypw-Af-Ea6" customClass="CardDetailsTableViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
@@ -373,7 +364,7 @@
                             <outlet property="delegate" destination="ypw-Af-Ea6" id="PfY-6e-ajf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Karte" id="hMD-oK-Xtn">
+                    <navigationItem key="navigationItem" id="hMD-oK-Xtn">
                         <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="DS0-Nh-X3e">
                             <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -397,7 +388,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBR-qW-TAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gEM-M2-cBF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="987"/>
+            <point key="canvasLocation" x="2495" y="987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oS1-Mt-TIu">
@@ -413,7 +404,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5F-Oj-ciy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="987"/>
+            <point key="canvasLocation" x="1773" y="987"/>
         </scene>
         <!--Neuer Stapel-->
         <scene sceneID="bIF-ZD-OiQ">
@@ -555,6 +546,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVa-i7-Ggh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

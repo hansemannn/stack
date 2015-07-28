@@ -250,12 +250,12 @@
 		3A1869FE1B2C2B41008E779A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3AA1E3951B668EAF00EF2346 /* SwipeStack */,
 				3A1869F41B2C2AF0008E779A /* HomeViewController.swift */,
 				3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */,
 				3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */,
 				3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */,
 				3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */,
-				3AA1E3951B668EAF00EF2346 /* SwipeStack */,
 				3A5FF5311B2E04A100CA02FE /* CardDetailsTableViewController.swift */,
 			);
 			name = Controllers;
@@ -1295,6 +1295,7 @@
 				3AB6DA711B67CA9B005E0BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AB6DA731B67CA9B005E0BE2 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxyTests" */ = {
 			isa = XCConfigurationList;
@@ -1303,6 +1304,7 @@
 				3AB6DA751B67CA9B005E0BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
