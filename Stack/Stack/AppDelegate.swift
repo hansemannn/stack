@@ -46,17 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - WatchKit delegate
 
-    func application(application: UIApplication,
-        handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
-         reply: (([NSObject : AnyObject]!) -> Void)!) {
-
-        let stacks: [Stack] = []//PersistenceManager.sharedManager.findAllStacks()!
-
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        
+        var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()!
+        
         if(stacks.count == 0) {
             reply(["Models" : ["Kein Stapel"]])
             return;
         }
-
             
         var stacksAsStringArray: [String]!
         

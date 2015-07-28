@@ -10,6 +10,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
+                        <button width="1" alignment="left" title="Stapel laden" id="ccs-gh-7M5">
+                            <connections>
+                                <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="ZWY-Zd-1An"/>
+                            </connections>
+                        </button>
                         <table alignment="left" id="hdh-j2-bPw">
                             <items>
                                 <tableRow identifier="StackCell" id="0St-63-pYP" customClass="StackRowTableViewController" customModule="Stack_WatchKit_Extension">
