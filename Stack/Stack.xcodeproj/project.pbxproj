@@ -22,6 +22,7 @@
 		3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */; };
 		3A3932171B6786CC00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
 		3A3932181B6786CD00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
+		3A39321A1B67889800D2A1CB /* ScreenDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932191B67889800D2A1CB /* ScreenDimensions.swift */; };
 		3A48ED841B66E66A0065C137 /* StackListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED831B66E66A0065C137 /* StackListInterfaceController.swift */; };
 		3A48ED861B66E66A0065C137 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED851B66E66A0065C137 /* NotificationController.swift */; };
 		3A48ED881B66E66A0065C137 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED871B66E66A0065C137 /* GlanceController.swift */; };
@@ -101,6 +102,7 @@
 		3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowTableViewController.swift; sourceTree = "<group>"; };
 		3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListInterfaceController.swift; sourceTree = "<group>"; };
 		3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsInterfaceController.swift; sourceTree = "<group>"; };
+		3A3932191B67889800D2A1CB /* ScreenDimensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenDimensions.swift; sourceTree = "<group>"; };
 		3A48ED7E1B66E66A0065C137 /* Stack WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Stack WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A48ED811B66E66A0065C137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A48ED821B66E66A0065C137 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -187,8 +189,8 @@
 		3A1869FE1B2C2B41008E779A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */,
 				3A1869F41B2C2AF0008E779A /* HomeViewController.swift */,
+				3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */,
 				3A1814121B2CE94900F53AE2 /* StackTableViewCell.swift */,
 				3AD48E801B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift */,
 				3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */,
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				3AD6A66F1B2CC50D00801033 /* PersistenceManager.swift */,
+				3A3932191B67889800D2A1CB /* ScreenDimensions.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 			files = (
 				3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */,
 				3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */,
+				3A39321A1B67889800D2A1CB /* ScreenDimensions.swift in Sources */,
 				3A1869F51B2C2AF0008E779A /* HomeViewController.swift in Sources */,
 				3AA1E3921B668D8B00EF2346 /* SwipeStackViewController.swift in Sources */,
 				3A1814131B2CE94900F53AE2 /* StackTableViewCell.swift in Sources */,

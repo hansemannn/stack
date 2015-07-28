@@ -17,6 +17,7 @@ class CardDetailsTableViewController: UITableViewController {
     @IBOutlet weak var answerField: UITextView!
 
     var cardData: Card!
+    var isNewCard: Bool = true
    
     @IBAction func closeView(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -25,13 +26,24 @@ class CardDetailsTableViewController: UITableViewController {
     @IBAction func deleteCard(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Karte löschen", message: "Möchtest du die Karte wirklich löschen?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertActionStyle.Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Unwiderruflich löschen", style: UIAlertActionStyle.Destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Unwiderruflich löschen", style: UIAlertActionStyle.Destructive, handler: {
+            (action: UIAlertAction!) in
+            self.cardData.stack.removeCard(self.cardData)
+            PersistenceManager.sharedManager.persistAll()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }))
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
-        if(self.cardData != nil) {
+        
+        self.isNewCard = self.cardData == nil
+        
+        if(self.isNewCard) {
+            self.navigationController?.navigationBar.topItem?.title = "Neue Karte"
+            self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: UIView(frame: CGRect())), animated: true)
+        } else {
             self.navigationController?.navigationBar.topItem?.title = "Karte bearbeiten"
             self.questionField.text = self.cardData.question
             self.answerField.text = self.cardData.answer

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import SnapKit
 
 @IBDesignable
@@ -52,9 +53,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         self.emptyImageView.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(221)
-            make.height.equalTo(190)
-            make.top.equalTo(0)
+            
+            if(ScreenSize.SCREEN_WIDTH > 320) {
+                make.width.equalTo(221)
+                make.height.equalTo(190)
+                make.top.equalTo(0)
+            } else {
+                make.width.equalTo(150)
+                make.height.equalTo(129)
+                make.top.equalTo(55)
+            }
+            
             make.centerX.equalTo(self.emptyContainerView)
         }
         
@@ -118,7 +127,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - TableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        PersistenceManager.sharedManager.managedObjectContext.deleteObject(self.stacks[indexPath.row] as! NSManagedObject)
+        PersistenceManager.sharedManager.persistAll()
         
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
+        self.numberOfStacks = self.stacks.count
+        
+        self.addUI()
     }
     
     // MARK: - Prepare for segue

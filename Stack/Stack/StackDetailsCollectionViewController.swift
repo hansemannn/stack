@@ -33,6 +33,7 @@ class StackDetailsCollectionViewController: UICollectionViewController {
         }
         
         self.navigationController?.navigationBar.topItem?.title = title
+        self.collectionView?.reloadData()
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
