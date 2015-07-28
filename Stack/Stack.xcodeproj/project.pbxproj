@@ -20,8 +20,6 @@
 		3A39320F1B67822700D2A1CB /* CardRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */; };
 		3A3932111B67829E00D2A1CB /* CardListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */; };
 		3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */; };
-		3A3932171B6786CC00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
-		3A3932181B6786CD00D2A1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
 		3A39321A1B67889800D2A1CB /* ScreenDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932191B67889800D2A1CB /* ScreenDimensions.swift */; };
 		3A48ED841B66E66A0065C137 /* StackListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED831B66E66A0065C137 /* StackListInterfaceController.swift */; };
 		3A48ED861B66E66A0065C137 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48ED851B66E66A0065C137 /* NotificationController.swift */; };
@@ -49,6 +47,9 @@
 		3AD48E831B2DF9DE00AAB523 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */; };
 		3AD6A66E1B2CC35200801033 /* NewStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */; };
 		3AD6A6701B2CC50D00801033 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6A66F1B2CC50D00801033 /* PersistenceManager.swift */; };
+		3AEF9C3D1B681D2C005ECE0C /* iTunesConnectIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9C3C1B681D2C005ECE0C /* iTunesConnectIcon.png */; };
+		3AEF9C401B681FF5005ECE0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
+		3AEF9C411B681FF6005ECE0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		3AD48E821B2DF9DE00AAB523 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStackTableViewController.swift; sourceTree = "<group>"; };
 		3AD6A66F1B2CC50D00801033 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		3AEF9C3C1B681D2C005ECE0C /* iTunesConnectIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesConnectIcon.png; sourceTree = "<group>"; };
 		BEE3AA35809D5A88C5F5D419 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D367988448BED4AC7C66661C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 		3A1814141B2CF17100F53AE2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3AEF9C3C1B681D2C005ECE0C /* iTunesConnectIcon.png */,
 				3A9734AA1B2C33EA0092DF5A /* CartoGothicStd-Bold.ttf */,
 			);
 			name = Fonts;
@@ -709,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9734AB1B2C34820092DF5A /* CartoGothicStd-Bold.ttf in Resources */,
+				3AEF9C3D1B681D2C005ECE0C /* iTunesConnectIcon.png in Resources */,
 				3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */,
 				3A1869FC1B2C2B1B008E779A /* Images.xcassets in Resources */,
 				3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */,
@@ -726,7 +730,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3932171B6786CC00D2A1CB /* Images.xcassets in Resources */,
+				3AEF9C401B681FF5005ECE0C /* Images.xcassets in Resources */,
 				3A48ED8A1B66E66A0065C137 /* Images.xcassets in Resources */,
 				3A48ED8E1B66E66A0065C137 /* Stack WatchKit App.app in Resources */,
 			);
@@ -736,7 +740,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3932181B6786CD00D2A1CB /* Images.xcassets in Resources */,
+				3AEF9C411B681FF6005ECE0C /* Images.xcassets in Resources */,
 				3A48ED961B66E66A0065C137 /* Interface.storyboard in Resources */,
 				3A48ED981B66E66A0065C137 /* Images.xcassets in Resources */,
 			);
