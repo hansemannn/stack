@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return;
         }
             
-        var stacksAsStringArray: [String]!
+        var stacksAsStringArray = [String]()
         
         for(var i = 0; i < stacks.count; i++) {
             stacksAsStringArray.append(stacks[i].name)
