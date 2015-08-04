@@ -17,6 +17,7 @@
 		3A2AB1BC1B2B7B6600E03BA4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BA1B2B7B6600E03BA4 /* Home.storyboard */; };
 		3A2AB1C11B2B7B6600E03BA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2AB1BF1B2B7B6600E03BA4 /* LaunchScreen.xib */; };
 		3A2AB1CD1B2B7B6600E03BA4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */; };
+		3A30B1201B71005800978969 /* MainMenuInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A30B11F1B71005800978969 /* MainMenuInterfaceController.swift */; };
 		3A39320F1B67822700D2A1CB /* CardRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */; };
 		3A3932111B67829E00D2A1CB /* CardListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */; };
 		3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */; };
@@ -137,6 +138,7 @@
 		3A2AB1C61B2B7B6600E03BA4 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2AB1CB1B2B7B6600E03BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A2AB1CC1B2B7B6600E03BA4 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		3A30B11F1B71005800978969 /* MainMenuInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuInterfaceController.swift; sourceTree = "<group>"; };
 		3A39320E1B67822700D2A1CB /* CardRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowTableViewController.swift; sourceTree = "<group>"; };
 		3A3932101B67829E00D2A1CB /* CardListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListInterfaceController.swift; sourceTree = "<group>"; };
 		3A3932151B67847300D2A1CB /* CardDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsInterfaceController.swift; sourceTree = "<group>"; };
@@ -220,13 +222,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30AB0C451B66948500EC9B3E /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Repository;
-			sourceTree = "<group>";
-		};
 		3A1814141B2CF17100F53AE2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +240,6 @@
 				3A9734AC1B2C36230092DF5A /* Extensions */,
 				3A186A011B2C2B71008E779A /* Helper */,
 				3A186A001B2C2B69008E779A /* Models */,
-				30AB0C451B66948500EC9B3E /* Repository */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -386,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB6DA501B67C92B005E0BE2 /* Stack WatchKit Extension.entitlements */,
+				3A30B11F1B71005800978969 /* MainMenuInterfaceController.swift */,
 				3A3932121B67844800D2A1CB /* StackList */,
 				3A3932131B67844F00D2A1CB /* CardList */,
 				3A3932141B67845A00D2A1CB /* CardDetails */,
@@ -848,6 +843,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A39320F1B67822700D2A1CB /* CardRowTableViewController.swift in Sources */,
+				3A30B1201B71005800978969 /* MainMenuInterfaceController.swift in Sources */,
 				3A3932161B67847300D2A1CB /* CardDetailsInterfaceController.swift in Sources */,
 				3A3932111B67829E00D2A1CB /* CardListInterfaceController.swift in Sources */,
 				3A48ED861B66E66A0065C137 /* NotificationController.swift in Sources */,

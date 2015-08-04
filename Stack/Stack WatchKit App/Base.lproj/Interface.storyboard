@@ -5,40 +5,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Stack List Interface Controller-->
+        <!--Main Menu Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
+                <controller id="AgC-eL-Hgc" customClass="MainMenuInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Stapel laden" id="ccs-gh-7M5">
+                        <button width="1" alignment="left" title="Stapel" id="ccs-gh-7M5">
+                            <fontDescription key="font" type="system" pointSize="15"/>
                             <connections>
-                                <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="ZWY-Zd-1An"/>
+                                <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="EIZ-sT-9VJ"/>
+                                <segue destination="F2l-1A-S0c" kind="push" id="MO9-OK-b00"/>
                             </connections>
                         </button>
-                        <table alignment="left" id="hdh-j2-bPw">
-                            <items>
-                                <tableRow identifier="StackCell" id="0St-63-pYP" customClass="StackRowTableViewController" customModule="Stack_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="LFE-Xs-HY3">
-                                        <items>
-                                            <label alignment="center" verticalAlignment="center" text="Modul" id="Aky-5A-Bb7"/>
-                                        </items>
-                                        <connections>
-                                            <segue destination="Rz1-1t-6k4" kind="push" id="ygi-fy-DEm"/>
-                                        </connections>
-                                    </group>
-                                    <connections>
-                                        <outlet property="headlineLabel" destination="Aky-5A-Bb7" id="eOZ-ju-Y8E"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
                     </items>
-                    <connections>
-                        <outlet property="tableView" destination="hdh-j2-bPw" id="yRs-cn-0QX"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="16" y="348"/>
         </scene>
         <!--Card List Interface Controller-->
         <scene sceneID="TRe-El-ahe">
@@ -68,7 +50,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="434" y="347"/>
+            <point key="canvasLocation" x="423" y="348"/>
         </scene>
         <!--Card Details Interface Controller-->
         <scene sceneID="ub3-Of-ddR">
@@ -117,7 +99,37 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="631" y="339.75"/>
+            <point key="canvasLocation" x="630" y="348"/>
+        </scene>
+        <!--Stack List Interface Controller-->
+        <scene sceneID="1Yz-zE-2v4">
+            <objects>
+                <controller id="F2l-1A-S0c" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="eEZ-AY-s2C">
+                            <items>
+                                <tableRow identifier="StackCell" id="fbI-2s-vr6" customClass="StackRowTableViewController" customModule="Stack_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="g4D-Ou-CWc">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="{{Stack}}" minimumScaleFactor="0.50000000000000011" id="pIw-kR-k3i"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="Rz1-1t-6k4" kind="push" id="Lw2-B6-CJM"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="headlineLabel" destination="pIw-kR-k3i" id="4eN-So-Q30"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="eEZ-AY-s2C" id="x0s-5X-02r"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="226" y="348"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

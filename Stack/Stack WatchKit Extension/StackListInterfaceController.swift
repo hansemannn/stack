@@ -15,10 +15,6 @@ class StackListInterfaceController: WKInterfaceController {
     @IBOutlet weak var tableView: WKInterfaceTable!
     var stacks: [String] = []
     
-    @IBAction func onLoadStacksButtonTapped() {
-        loadTableData()    
-    }
-    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
@@ -35,12 +31,10 @@ class StackListInterfaceController: WKInterfaceController {
             
             if let castedResponseDictionary = replyInfo as? [String: [String]] {
                 
-                self.stacks = castedResponseDictionary["Models"]!
-                
+                self.stacks = castedResponseDictionary["Models"]!                
                 self.tableView.setNumberOfRows(self.stacks.count, withRowType: "StackCell")
                 
                 for(index,name) in enumerate(self.stacks) {
-                    println(name)
                     var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
                     row?.headlineLabel.setText(name)
                 }
@@ -52,6 +46,7 @@ class StackListInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        loadTableData()
     }
 
     override func didDeactivate() {
