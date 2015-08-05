@@ -11,8 +11,11 @@ import Foundation
 import CoreData
 
 class StackListInterfaceController: WKInterfaceController {
+    
+    @IBOutlet weak var emptyStackLabel: WKInterfaceLabel!
 
     @IBOutlet weak var tableView: WKInterfaceTable!
+    
     var stacks: [String] = []
     
     override func awakeWithContext(context: AnyObject?) {
@@ -21,7 +24,7 @@ class StackListInterfaceController: WKInterfaceController {
     
     func loadTableData() {
         
-        let dictionary = ["Models":"Stack"]
+        let dictionary = ["Models":"Stacks"]
 
         WKInterfaceController.openParentApplication(dictionary) { (replyInfo, error) -> Void in
             
@@ -32,26 +35,37 @@ class StackListInterfaceController: WKInterfaceController {
             if let castedResponseDictionary = replyInfo as? [String: [String]] {
                 
                 self.stacks = castedResponseDictionary["Models"]!                
-                self.tableView.setNumberOfRows(self.stacks.count, withRowType: "StackCell")
+                self.tableView.setNumberOfRows(self.stacks.count == 0 ? 1 : self.stacks.count, withRowType: "StackCell")
                 
-                for(index,name) in enumerate(self.stacks) {
-                    var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
-                    row?.headlineLabel.setText(name)
+                if(self.stacks.count == 0) {
+                    self.tableView.setHidden(true)
+                    self.emptyStackLabel.setHidden(false)
+                } else {
+                    for(index,name) in enumerate(self.stacks) {
+                        var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
+                        row?.stackName = name
+                        row?.headlineLabel.setText(name)
+                    }
                 }
-                
             }
         }
     }
-
+    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        loadTableData()
+        
+        self.loadTableData()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        if segueIdentifier == "OpenCardListSegue" {
+            return self.stacks[rowIndex]
+        }
+        
+        return nil
+    }
 }

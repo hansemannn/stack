@@ -11,27 +11,52 @@ import Foundation
 
 class CardListInterfaceController: WKInterfaceController {
     
+    @IBOutlet weak var emptyCardLabel: WKInterfaceLabel!
+    
     @IBOutlet weak var tableView: WKInterfaceTable!
-    let cards = ["Frage 1", "Frage 2"]
+    
+    var cards: [String] = []
+    
+    var stackName: String!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        self.stackName = context as? String
     }
     
     func loadTableData() {
         
-        self.tableView.setNumberOfRows(cards.count, withRowType: "CardCell")
+        let dictionary = ["Models":"Cards", "StackName": self.stackName!] // TODO: Append stack name here
         
-        for(index,name) in enumerate(cards) {
-            var row = self.tableView.rowControllerAtIndex(index) as? CardRowTableViewController
-            row?.headlineLabel.setText(name)
+        WKInterfaceController.openParentApplication(dictionary) { (replyInfo, error) -> Void in
+            
+            if error != nil {
+                println(error)
+            }
+            
+            if let castedResponseDictionary = replyInfo as? [String: [String]] {
+                
+                self.cards = castedResponseDictionary["Models"]!
+                self.tableView.setNumberOfRows(self.cards.count == 0 ? 1 : self.cards.count, withRowType: "CardCell")
+                
+                if(self.cards.count == 0) {
+                    self.tableView.setHidden(true)
+                    self.emptyCardLabel.setHidden(false)
+                } else {
+                    for(index,name) in enumerate(self.cards) {
+                        var row = self.tableView.rowControllerAtIndex(index) as? CardRowTableViewController
+                        row?.headlineLabel.setText(name)
+                    }
+                }
+            }
         }
     }
     
     override func willActivate() {
-        loadTableData()
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        self.loadTableData()
     }
     
     override func didDeactivate() {

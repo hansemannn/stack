@@ -10,6 +10,7 @@ import WatchKit
 
 class StackRowTableViewController: NSObject {
     
-    @IBOutlet weak var headlineLabel: WKInterfaceLabel!
+    var stackName: String!
 
+    @IBOutlet weak var headlineLabel: WKInterfaceLabel!
 }

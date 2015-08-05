@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()
         self.numberOfStacks = self.stacks.count
         
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()
         self.numberOfStacks = self.stacks.count
         
         self.addUI()        
@@ -139,7 +139,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         PersistenceManager.sharedManager.managedObjectContext.deleteObject(self.stacks[indexPath.row] as! NSManagedObject)
         PersistenceManager.sharedManager.persistAll()
         
-        self.stacks = PersistenceManager.sharedManager.findAllStacks()!
+        self.stacks = PersistenceManager.sharedManager.findAllStacks()
         self.numberOfStacks = self.stacks.count
         
         self.addUI()

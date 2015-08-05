@@ -45,27 +45,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - WatchKit delegate
-
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
         
-        var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()!
+        let requestedModels = userInfo as! [String : String]
         
-        if(stacks.count == 0) {
-            reply(["Models" : ["Kein Stapel"]])
+        if(requestedModels["Models"] == "Stacks") {
+            self.getAllStacks(userInfo, reply: reply)
+        } else if(requestedModels["Models"] == "Cards") {
+            self.getCardsByStack(requestedModels["StackName"]!, userInfo: userInfo, reply: reply)
+        }
+    }
+    
+    func getCardsByStack(stackName: String,userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
+
+        var cards: [Card] = PersistenceManager.sharedManager.findCardsByStackName(stackName)
+        
+        if(cards.count == 0) {
+            reply(["Models" : []])
             return;
         }
-            
+        
+        var cardsAsStringArray = [String]()
+        
+        for(var i = 0; i < cards.count; i++) {
+            cardsAsStringArray.append(cards[i].question)
+        }
+        
+        reply(["Models" : cardsAsStringArray])
+    }
+    
+    func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
+        var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()
+        
+        if(stacks.count == 0) {
+            reply(["Models" : []])
+            return;
+        }
+        
         var stacksAsStringArray = [String]()
         
         for(var i = 0; i < stacks.count; i++) {
             stacksAsStringArray.append(stacks[i].name)
         }
-            
-        reply(["Models" : stacksAsStringArray])
-    }
-    
-    func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
         
+        reply(["Models" : stacksAsStringArray])
     }
 
     // MARK: - Core Data stack

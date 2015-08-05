@@ -32,7 +32,7 @@
                                 <tableRow identifier="CardCell" id="KUF-ko-gG9" customClass="CardRowTableViewController" customModule="Stack_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="OuE-UY-Yxg">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Frage" minimumScaleFactor="0.50000000000000011" id="2W1-FC-ikq"/>
+                                            <label alignment="center" verticalAlignment="center" text="{{Question}}" minimumScaleFactor="0.50000000000000011" id="2W1-FC-ikq"/>
                                         </items>
                                         <connections>
                                             <segue destination="ACz-VX-XNP" kind="push" id="T57-TV-azp"/>
@@ -44,8 +44,10 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <label height="43.5" alignment="center" verticalAlignment="center" hidden="YES" text="Keine Karten vorhanden" textAlignment="center" numberOfLines="2" id="Fra-3c-0Q6"/>
                     </items>
                     <connections>
+                        <outlet property="emptyCardLabel" destination="Fra-3c-0Q6" id="Wom-2l-b74"/>
                         <outlet property="tableView" destination="rLq-Ew-XrC" id="Ai4-E6-QPA"/>
                     </connections>
                 </controller>
@@ -64,7 +66,7 @@
                                 </label>
                             </items>
                         </group>
-                        <label alignment="left" text="Lorem Ipsum" minimumScaleFactor="0.80000000000000004" id="the-L5-z6e">
+                        <label alignment="left" text="{{Question}}" minimumScaleFactor="0.80000000000000004" id="the-L5-z6e">
                             <color key="textColor" red="0.90313289139999997" green="0.90313289139999997" blue="0.90313289139999997" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <group width="1" alignment="left" id="O9j-ae-hOn">
@@ -74,7 +76,7 @@
                                 </label>
                             </items>
                         </group>
-                        <label alignment="left" text="Lorem Ipsum" minimumScaleFactor="0.80000000000000004" id="uEU-a6-KUy">
+                        <label alignment="left" text="{{Answer}}" minimumScaleFactor="0.80000000000000004" id="uEU-a6-KUy">
                             <color key="textColor" red="0.90313289139999997" green="0.90313289139999997" blue="0.90313289139999997" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <group width="1" alignment="center" verticalAlignment="center" id="7uk-iv-3Zq">
@@ -106,6 +108,7 @@
             <objects>
                 <controller id="F2l-1A-S0c" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
+                        <label height="43.5" alignment="center" verticalAlignment="center" hidden="YES" text="Keine Stapel vorhanden" textAlignment="center" numberOfLines="2" id="hsI-ji-lTd"/>
                         <table alignment="left" id="eEZ-AY-s2C">
                             <items>
                                 <tableRow identifier="StackCell" id="fbI-2s-vr6" customClass="StackRowTableViewController" customModule="Stack_WatchKit_Extension">
@@ -114,7 +117,7 @@
                                             <label alignment="center" verticalAlignment="center" text="{{Stack}}" minimumScaleFactor="0.50000000000000011" id="pIw-kR-k3i"/>
                                         </items>
                                         <connections>
-                                            <segue destination="Rz1-1t-6k4" kind="push" id="Lw2-B6-CJM"/>
+                                            <segue destination="Rz1-1t-6k4" kind="push" identifier="OpenCardListSegue" id="Lw2-B6-CJM"/>
                                         </connections>
                                     </group>
                                     <connections>
@@ -125,6 +128,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="emptyStackLabel" destination="hsI-ji-lTd" id="Us1-B4-zwV"/>
                         <outlet property="tableView" destination="eEZ-AY-s2C" id="x0s-5X-02r"/>
                     </connections>
                 </controller>

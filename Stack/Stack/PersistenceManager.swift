@@ -39,7 +39,7 @@ class PersistenceManager : NSObject {
         return newCard        
     }
     
-    func findAllStacks() -> [Stack]? {
+    func findAllStacks() -> [Stack] {
         //Create fetch request to get all entries of the profile table
         let fetchRequest = NSFetchRequest(entityName: "Stack")
         let error: NSErrorPointer = NSErrorPointer()
@@ -49,8 +49,22 @@ class PersistenceManager : NSObject {
             return fetchResults
         } else {
             print("Could not fetch \(error), \(error.debugDescription)")
-            return nil
+            return []
         }
+    }
+    
+    func findCardsByStackName(stackName: String) -> [Card] {
+        let stacks = self.findAllStacks()
+        
+        for(var i = 0; i < stacks.count; i++) {
+            if(stacks[i].name == stackName) {
+                println("Found cards: %@", stacks[i].cards.allObjects as! [Card])
+
+                return stacks[i].cards.allObjects as! [Card]
+            }
+        }
+        
+        return []
     }
     
     func persistAll() {

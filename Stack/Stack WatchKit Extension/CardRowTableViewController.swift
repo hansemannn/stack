@@ -9,7 +9,6 @@
 import WatchKit
 
 class CardRowTableViewController: NSObject {
-    
     @IBOutlet weak var headlineLabel: WKInterfaceLabel!
     
 }
