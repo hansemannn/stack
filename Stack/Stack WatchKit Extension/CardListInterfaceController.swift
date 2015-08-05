@@ -55,6 +55,15 @@ class CardListInterfaceController: WKInterfaceController {
         }
     }
     
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        
+        if segueIdentifier == "OpenCardDetailsSegue" {
+            return [self.cards.allKeys[rowIndex], self.cards.allValues[rowIndex]]
+        }
+        
+        return nil
+    }
+    
     override func willActivate() {
         super.willActivate()
 

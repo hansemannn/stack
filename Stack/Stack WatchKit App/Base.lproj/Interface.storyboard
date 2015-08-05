@@ -10,13 +10,17 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="MainMenuInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Stapel" id="ccs-gh-7M5">
-                            <fontDescription key="font" type="system" pointSize="15"/>
-                            <connections>
-                                <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="EIZ-sT-9VJ"/>
-                                <segue destination="F2l-1A-S0c" kind="push" id="MO9-OK-b00"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" id="LFb-gO-deA">
+                            <items>
+                                <button width="1" alignment="left" title="Stapel" id="ccs-gh-7M5">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <connections>
+                                        <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="EIZ-sT-9VJ"/>
+                                        <segue destination="F2l-1A-S0c" kind="push" id="MO9-OK-b00"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                 </controller>
             </objects>
@@ -35,7 +39,7 @@
                                             <label alignment="center" verticalAlignment="center" text="{{Question}}" minimumScaleFactor="0.50000000000000011" id="2W1-FC-ikq"/>
                                         </items>
                                         <connections>
-                                            <segue destination="ACz-VX-XNP" kind="push" id="T57-TV-azp"/>
+                                            <segue destination="ACz-VX-XNP" kind="push" identifier="OpenCardDetailsSegue" id="T57-TV-azp"/>
                                         </connections>
                                     </group>
                                     <connections>
@@ -101,7 +105,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="630" y="348"/>
+            <point key="canvasLocation" x="632" y="348"/>
         </scene>
         <!--Stack List Interface Controller-->
         <scene sceneID="1Yz-zE-2v4">

@@ -380,10 +380,10 @@
 			isa = PBXGroup;
 			children = (
 				3AB6DA501B67C92B005E0BE2 /* Stack WatchKit Extension.entitlements */,
-				3A30B11F1B71005800978969 /* MainMenuInterfaceController.swift */,
 				3A3932121B67844800D2A1CB /* StackList */,
 				3A3932131B67844F00D2A1CB /* CardList */,
 				3A3932141B67845A00D2A1CB /* CardDetails */,
+				3A30B11F1B71005800978969 /* MainMenuInterfaceController.swift */,
 				3A48ED851B66E66A0065C137 /* NotificationController.swift */,
 				3A48ED871B66E66A0065C137 /* GlanceController.swift */,
 				3A48ED891B66E66A0065C137 /* Images.xcassets */,
