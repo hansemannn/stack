@@ -15,7 +15,7 @@ class CardListInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var tableView: WKInterfaceTable!
     
-    var cards: [String] = []
+    var cards: NSMutableDictionary!
     
     var stackName: String!
     
@@ -35,18 +35,20 @@ class CardListInterfaceController: WKInterfaceController {
                 println(error)
             }
             
-            if let castedResponseDictionary = replyInfo as? [String: [String]] {
+            if let castedResponseDictionary = replyInfo["Models"] as? [String : String] {
                 
-                self.cards = castedResponseDictionary["Models"]!
+                self.cards = NSMutableDictionary(dictionary: castedResponseDictionary)
                 self.tableView.setNumberOfRows(self.cards.count == 0 ? 1 : self.cards.count, withRowType: "CardCell")
                 
                 if(self.cards.count == 0) {
                     self.tableView.setHidden(true)
                     self.emptyCardLabel.setHidden(false)
                 } else {
-                    for(index,name) in enumerate(self.cards) {
+                    for(index, name) in enumerate(self.cards) {
                         var row = self.tableView.rowControllerAtIndex(index) as? CardRowTableViewController
-                        row?.headlineLabel.setText(name)
+                        row?.question = name.key as? String
+                        row?.answer = name.value as? String
+                        row?.headlineLabel.setText(name.key as? String)
                     }
                 }
             }
@@ -54,13 +56,12 @@ class CardListInterfaceController: WKInterfaceController {
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+
         self.loadTableData()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
     

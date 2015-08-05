@@ -9,6 +9,11 @@
 import WatchKit
 
 class CardRowTableViewController: NSObject {
+    
+    var question: String!
+    
+    var answer: String!
+    
     @IBOutlet weak var headlineLabel: WKInterfaceLabel!
     
 }

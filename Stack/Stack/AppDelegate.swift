@@ -61,17 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var cards: [Card] = PersistenceManager.sharedManager.findCardsByStackName(stackName)
         
         if(cards.count == 0) {
-            reply(["Models" : []])
+            reply(["Models" : NSDictionary()])
             return;
         }
         
-        var cardsAsStringArray = [String]()
+        var cardsAsDictionary = NSMutableDictionary(capacity: cards.count)
         
         for(var i = 0; i < cards.count; i++) {
-            cardsAsStringArray.append(cards[i].question)
+            cardsAsDictionary.setObject(cards[i].answer, forKey: cards[i].question)
         }
         
-        reply(["Models" : cardsAsStringArray])
+        reply(["Models" : cardsAsDictionary])
     }
     
     func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
