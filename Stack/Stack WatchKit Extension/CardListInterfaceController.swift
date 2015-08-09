@@ -40,7 +40,7 @@ class CardListInterfaceController: WKInterfaceController {
                 self.cards = NSMutableDictionary(dictionary: castedResponseDictionary)
                 self.tableView.setNumberOfRows(self.cards.count == 0 ? 1 : self.cards.count, withRowType: "CardCell")
                 
-                if(self.cards.count == 0) {
+                if self.cards.count == 0 {
                     self.tableView.setHidden(true)
                     self.emptyCardLabel.setHidden(false)
                 } else {

@@ -37,7 +37,7 @@ class StackListInterfaceController: WKInterfaceController {
                 self.stacks = castedResponseDictionary["Models"]!                
                 self.tableView.setNumberOfRows(self.stacks.count == 0 ? 1 : self.stacks.count, withRowType: "StackCell")
                 
-                if(self.stacks.count == 0) {
+                if self.stacks.count == 0 {
                     self.tableView.setHidden(true)
                     self.emptyStackLabel.setHidden(false)
                 } else {

@@ -26,7 +26,7 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     override func viewDidAppear(animated: Bool) {
         var title: String!
         
-        if(stack.cards.count == 1) {
+        if stack.cards.count == 1 {
             title = "\(stack.name) (Eine Karte)"
         } else {
             title = "\(stack.name) (\(stack.cards.count) Karten)"
@@ -61,11 +61,11 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     // MARK: - Prepare for segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "ShowSwipeViewSegue") {
+        if segue.identifier == "ShowSwipeViewSegue" {
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
             var newStackVC: SwipeStackViewController = naviVC.topViewController as! SwipeStackViewController
             newStackVC.stack = self.stack
-        } else if(segue.identifier == "ShowDetailSegue") {
+        } else if segue.identifier == "ShowDetailSegue" {
             var _sender:CardCollectionViewCell = sender as! CardCollectionViewCell
 
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController

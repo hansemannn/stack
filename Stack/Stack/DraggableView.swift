@@ -73,7 +73,7 @@ class DraggableView: UIView {
     }
     
     func beingTapped(gestureRecognizer: UITapGestureRecognizer) -> Void {
-        if(self.isToggled == true) {
+        if self.isToggled == true {
             self.information.text = self.data.question
         } else {
             self.information.text = self.data.answer

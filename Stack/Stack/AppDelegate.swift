@@ -49,9 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let requestedModels = userInfo as! [String : String]
         
-        if(requestedModels["Models"] == "Stacks") {
+        if requestedModels["Models"] == "Stacks" {
             self.getAllStacks(userInfo, reply: reply)
-        } else if(requestedModels["Models"] == "Cards") {
+        } else if requestedModels["Models"] == "Cards" {
             self.getCardsByStack(requestedModels["StackName"]!, userInfo: userInfo, reply: reply)
         }
     }
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var cards: [Card] = PersistenceManager.sharedManager.findCardsByStackName(stackName)
         
-        if(cards.count == 0) {
+        if cards.count == 0 {
             reply(["Models" : NSDictionary()])
             return;
         }
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
         var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()
         
-        if(stacks.count == 0) {
+        if stacks.count == 0 {
             reply(["Models" : []])
             return;
         }
@@ -139,8 +139,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveContext () {
         if let moc = self.managedObjectContext {
             var error: NSErrorPointer = NSErrorPointer()
-            if(moc.hasChanges == true){
-                if(moc.save(error) == false) {
+            if moc.hasChanges == true {
+                if moc.save(error) == false {
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should 
                     // not use this function in a shipping application, although it may be useful during development.

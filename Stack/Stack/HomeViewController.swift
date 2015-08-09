@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.emptyImageView.snp_makeConstraints { (make) -> Void in
             
-            if(ScreenSize.SCREEN_WIDTH > 320) {
+            if ScreenSize.SCREEN_WIDTH > 320 {
                 make.width.equalTo(221)
                 make.height.equalTo(190)
                 make.top.equalTo(0)
@@ -145,13 +145,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Prepare for segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "NewStackSegue") {
+        if segue.identifier == "NewStackSegue" {
             
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
             var newStackVC: NewStackTableViewController = naviVC.topViewController as! NewStackTableViewController
             let newStack = PersistenceManager.sharedManager.createStack()
             newStackVC.stack = newStack
-        } else if(segue.identifier == "StackDetailSegue") {
+        } else if segue.identifier == "StackDetailSegue" {
             
             var indexPath = self.tableView.indexPathForSelectedRow()
             let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as! StackTableViewCell

@@ -44,7 +44,7 @@ class CardDetailsTableViewController: UITableViewController, UITextViewDelegate 
         
         self.isNewCard = self.cardData == nil
         
-        if(self.isNewCard) {
+        if self.isNewCard {
             self.navigationController?.navigationBar.topItem?.title = "Neue Karte"
             self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: UIView(frame: CGRect())), animated: true)
         } else {

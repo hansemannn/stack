@@ -57,7 +57,7 @@ class PersistenceManager : NSObject {
         let stacks = self.findAllStacks()
         
         for(var i = 0; i < stacks.count; i++) {
-            if(stacks[i].name == stackName) {
+            if stacks[i].name == stackName {
                 println("Found cards: %@", stacks[i].cards.allObjects as! [Card])
 
                 return stacks[i].cards.allObjects as! [Card]

@@ -34,14 +34,14 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
     }
     
     func stackChanged(cardsLeft: Int) {
-        if(cardsLeft == 0) {
+        if cardsLeft == 0 {
             
             var completedCards = 0
             var canceledCards = 0
             
             for(var i = 0; i < self.stack.cards.count; i++) {
                 let currentCard: Card = self.stack.cards.allObjects[i] as! Card
-                if(currentCard.completed == true) {
+                if currentCard.completed == true {
                     completedCards++
                 } else {
                     canceledCards++
