@@ -1,16 +1,16 @@
 {
     "aps": {
         "alert": {
-            "body": "Test message",
-            "title": "Optional title"
+            "title": "Neue Lernphase",
+            "body": "Eine neue Lernphase hat begonnen."
         },
         "category": "myCategory"
     },
     
     "WatchKit Simulator Actions": [
         {
-            "title": "First Button",
-            "identifier": "firstButtonAction"
+            "title": "Jetzt lernen!",
+            "identifier": "learnNowAction"
         }
     ],
     
