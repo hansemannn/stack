@@ -10,18 +10,28 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="MainMenuInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="LFb-gO-deA">
+                        <table alignment="left" id="tUs-3k-qje">
                             <items>
-                                <button width="1" alignment="left" title="Stapel" id="ccs-gh-7M5">
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                    <connections>
-                                        <action selector="onLoadStacksButtonTapped" destination="AgC-eL-Hgc" id="EIZ-sT-9VJ"/>
-                                        <segue destination="F2l-1A-S0c" kind="push" id="MO9-OK-b00"/>
-                                    </connections>
-                                </button>
+                                <tableRow identifier="MenuCell" id="Qrr-Qe-gCo">
+                                    <group key="rootItem" width="1" alignment="left" id="SfD-xs-PbV">
+                                        <items>
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="EmptyStack" id="ohe-XE-tGs"/>
+                                            <separator alignment="left" verticalAlignment="center" id="oNX-v5-qsn">
+                                                <color key="color" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </separator>
+                                            <label alignment="left" verticalAlignment="center" text="Stapel" id="IbS-cj-XI9"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="F2l-1A-S0c" kind="push" id="4Uu-eV-aVq"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
                             </items>
-                        </group>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="tableView" destination="tUs-3k-qje" id="e8F-so-ggZ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="16" y="348"/>

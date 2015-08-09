@@ -11,18 +11,19 @@ import Foundation
 
 
 class MainMenuInterfaceController: WKInterfaceController {
-
-    @IBAction func onLoadStacksButtonTapped() {
-        
-    }
+    
+    @IBOutlet weak var tableView: WKInterfaceTable!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        self.tableView.setNumberOfRows(1, withRowType: "MenuCell")
+        
+        self.tableView.rowControllerAtIndex(0)
     }
 
     override func didDeactivate() {
