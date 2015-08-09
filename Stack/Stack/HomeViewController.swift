@@ -27,9 +27,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        self.stacks = PersistenceManager.sharedManager.findAllStacks()
-        self.numberOfStacks = self.stacks.count
-        
+        self.numberOfStacks = 0
         super.viewDidLoad()
     }
 
@@ -114,9 +112,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellData = self.stacks[indexPath.row] as? Stack
-        
         let cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
-                
+        
         cell.nameLabel.text = cellData!.name
         cell.numberOfCardsLabel.text = String(cellData!.cards.count)
         cell.stack = cellData

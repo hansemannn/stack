@@ -36,9 +36,6 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
     func stackChanged(cardsLeft: Int) {
         if(cardsLeft == 0) {
             
-            // Erzeugt komischerweise ein weiteren leeren Stack
-            // PersistenceManager.sharedManager.persistAll()
-            
             var completedCards = 0
             var canceledCards = 0
             

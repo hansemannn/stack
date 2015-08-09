@@ -64,7 +64,6 @@ class StackDetailsCollectionViewController: UICollectionViewController {
         if (segue.identifier == "ShowSwipeViewSegue") {
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
             var newStackVC: SwipeStackViewController = naviVC.topViewController as! SwipeStackViewController
-            let newStack = PersistenceManager.sharedManager.createStack()
             newStackVC.stack = self.stack
         } else if(segue.identifier == "ShowDetailSegue") {
             var _sender:CardCollectionViewCell = sender as! CardCollectionViewCell
