@@ -24,32 +24,6 @@
             </objects>
             <point key="canvasLocation" x="2495" y="243"/>
         </scene>
-        <!--Lernrunde-->
-        <scene sceneID="Bh0-go-mmQ">
-            <objects>
-                <viewController id="miN-x5-8Xv" customClass="SwipeStackViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="com-rR-A9c"/>
-                        <viewControllerLayoutGuide type="bottom" id="PAi-BG-yCB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lte-cE-3gB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Lernrunde" id="mWo-mJ-iIN">
-                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="DQW-Ih-kL1">
-                            <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="closeView:" destination="miN-x5-8Xv" id="ppR-RR-3vN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q6g-a1-yCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3225" y="243"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
