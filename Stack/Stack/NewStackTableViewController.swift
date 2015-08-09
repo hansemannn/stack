@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewStackTableViewController: UITableViewController {
+class NewStackTableViewController: UITableViewController, UITextFieldDelegate {
 
     var stack: Stack!
     
@@ -21,6 +21,11 @@ class NewStackTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.saveButton.layer.cornerRadius = 5.0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.nameField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +49,13 @@ class NewStackTableViewController: UITableViewController {
     @IBAction func closeView(sender: UIBarButtonItem) {
         self.stack.managedObjectContext?.deleteObject(self.stack)
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - Text view delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 
     // MARK: - Table view data source

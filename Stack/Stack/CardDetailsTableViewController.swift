@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardDetailsTableViewController: UITableViewController {
+class CardDetailsTableViewController: UITableViewController, UITextViewDelegate {
 
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
@@ -35,6 +35,10 @@ class CardDetailsTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
+
+    override func viewDidLoad() {
+        self.submitButton.layer.cornerRadius = 5.0
+    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -50,6 +54,13 @@ class CardDetailsTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.questionField.delegate = self
+        self.answerField.delegate = self
+    }
+    
     func saveCard() {
         
         var card: Card = PersistenceManager.sharedManager.createCard()
@@ -58,12 +69,21 @@ class CardDetailsTableViewController: UITableViewController {
                 
         self.cardData = card
     }
+
+    // MARK: - Text view delegate
+
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
+
+    // MARK: - Segue delegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.saveCard()
-    }
-    
-    override func viewDidLoad() {
-        self.submitButton.layer.cornerRadius = 5.0
     }
 }

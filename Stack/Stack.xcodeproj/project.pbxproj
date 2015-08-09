@@ -164,7 +164,6 @@
 		3AA1E3961B668EE000EF2346 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
 		3AA1E3981B668EFA00EF2346 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		3AB6DA4F1B67C910005E0BE2 /* Stack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Stack.entitlements; sourceTree = "<group>"; };
-		3AB6DA501B67C92B005E0BE2 /* Stack WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Stack WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3AB6DA561B67CA9A005E0BE2 /* WatchCoreDataProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchCoreDataProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB6DA591B67CA9A005E0BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB6DA5A1B67CA9A005E0BE2 /* WatchCoreDataProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchCoreDataProxy.h; sourceTree = "<group>"; };
@@ -379,7 +378,6 @@
 		3A48ED7F1B66E66A0065C137 /* Stack WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3AB6DA501B67C92B005E0BE2 /* Stack WatchKit Extension.entitlements */,
 				3A3932121B67844800D2A1CB /* StackList */,
 				3A3932131B67844F00D2A1CB /* CardList */,
 				3A3932141B67845A00D2A1CB /* CardDetails */,
