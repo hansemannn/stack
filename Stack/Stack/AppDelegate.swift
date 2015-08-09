@@ -16,8 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: ["myCategory"]))
+        
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        var stackName: [String : String] = notification.userInfo as! [String : String]
+        var stack: Stack = PersistenceManager.sharedManager.findStackByStackName(stackName["StackName"]!)
+
+        var stackSwipeViewController = SwipeStackViewController()
+        stackSwipeViewController.stack = stack
+        
+        self.window?.rootViewController?.presentViewController(stackSwipeViewController, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

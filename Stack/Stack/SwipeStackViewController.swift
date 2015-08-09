@@ -13,7 +13,7 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
     var stack: Stack!
 
     @IBAction func closeView(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class SwipeStackViewController: UIViewController, EmptyStackDelegate {
                 preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) in
-                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
             }))
             
             self.presentViewController(alert, animated: true, completion: nil)

@@ -13,6 +13,54 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     var stack : Stack!
     var selectedItemIndex:NSIndexPath!
     
+    @IBAction func showActionOptions(sender: AnyObject) {
+        var options = UIAlertController(
+            title: "Was möchtest du tun?",
+            message: nil,
+            preferredStyle: UIAlertControllerStyle.ActionSheet
+        )
+        
+        options.addAction(UIAlertAction(
+            title: "Wecker einstellen [10 Sek PoC]",
+            style: UIAlertActionStyle.Default,
+            handler: {
+                (action: UIAlertAction!) in
+                
+                var notification = UILocalNotification()
+                notification.alertBody = "Eine neue Lernphase für \"\(self.stack.name)\" hat begonnen!"
+                notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+                notification.soundName = UILocalNotificationDefaultSoundName
+                notification.userInfo = ["StackName": self.stack.name]
+                notification.category = "myCategory"
+
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                
+                var alert = UIAlertController(title: "Wecker erfolgreich erstellt", message: "Dein Wecker für die nächste Lernrunde wurde erfolgreich gesetzt!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+        }))
+        
+        options.addAction(UIAlertAction(
+            title: "Neue Lernrunde",
+            style: UIAlertActionStyle.Default,
+            handler: {
+                (action: UIAlertAction!) in
+                var swipeController = SwipeStackViewController()
+                swipeController.stack = self.stack
+                self.presentViewController(swipeController, animated: true, completion: nil)
+        }))
+        
+        options.addAction(UIAlertAction(
+            title: "Abbrechen",
+            style: UIAlertActionStyle.Cancel,
+            handler: nil
+        ))
+        
+        presentViewController(options, animated: true, completion: nil)
+    }
+    
     @IBAction func unwindNewCardToStack(segue: UIStoryboardSegue) {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
         

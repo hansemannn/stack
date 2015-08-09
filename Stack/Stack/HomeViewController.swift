@@ -28,6 +28,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         self.numberOfStacks = 0
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addUI", name: "ListShouldOpenStack", object: nil)
+
         super.viewDidLoad()
     }
 

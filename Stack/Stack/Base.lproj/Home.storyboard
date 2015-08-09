@@ -19,13 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="miN-x5-8Xv" kind="relationship" relationship="rootViewController" id="kHy-B1-Fkx"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKN-O3-RsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="235"/>
+            <point key="canvasLocation" x="2495" y="243"/>
         </scene>
         <!--Lernrunde-->
         <scene sceneID="Bh0-go-mmQ">
@@ -167,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="1078" y="243"/>
         </scene>
-        <!--Laden ...-->
+        <!--Stack List Controller-->
         <scene sceneID="AHA-IV-5Vw">
             <objects>
-                <collectionViewController id="gHa-5q-1Jc" customClass="StackDetailsCollectionViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="gHa-5q-1Jc" userLabel="Stack List Controller" customClass="StackDetailsCollectionViewController" customModule="Stack" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hQC-zY-RSP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,15 +231,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Laden ..." id="04Y-FH-12e">
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="ZBr-Mk-vPF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="QzT-22-zoW">
                             <color key="tintColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="SKh-LS-Hqh" kind="presentation" identifier="ShowSwipeViewSegue" id="BnN-iF-Qp8"/>
+                                <action selector="showActionOptions:" destination="gHa-5q-1Jc" id="WWs-QO-Z9r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hQC-zY-RSP" id="x9z-sv-0LB"/>
+                        <segue destination="SKh-LS-Hqh" kind="presentation" identifier="ShowSwipeViewSegue" id="AJS-yL-B2r"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGa-k6-Vun" userLabel="First Responder" sceneMemberID="firstResponder"/>
