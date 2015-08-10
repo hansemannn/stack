@@ -17,7 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: ["myCategory"]))
+        var categories = NSMutableSet()
+        
+        var acceptAction = UIMutableUserNotificationAction()
+        acceptAction.title = NSLocalizedString("Jetzt lernen!", comment: "Accept invitation")
+        acceptAction.identifier = "learn"
+        acceptAction.activationMode = UIUserNotificationActivationMode.Background
+        acceptAction.authenticationRequired = false
+        
+        var inviteCategory = UIMutableUserNotificationCategory()
+        inviteCategory.setActions([acceptAction],
+            forContext: UIUserNotificationActionContext.Default)
+        inviteCategory.identifier = "myCategory"
+        
+        categories.addObject(inviteCategory)
+        
+        var settings = UIUserNotificationSettings(forTypes: (.Alert | .Badge | .Sound),
+            categories: categories as Set<NSObject>)
+        
+        application.registerUserNotificationSettings(settings)
         
         return true
     }
