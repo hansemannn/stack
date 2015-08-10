@@ -128,7 +128,14 @@
                                 <tableRow identifier="StackCell" id="fbI-2s-vr6" customClass="StackRowTableViewController" customModule="Stack_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="g4D-Ou-CWc">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="{{Stack}}" minimumScaleFactor="0.50000000000000011" id="pIw-kR-k3i"/>
+                                            <group width="30" height="30" alignment="left" verticalAlignment="center" radius="15" id="kry-Jr-Nyy">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="1" textAlignment="center" id="8VS-vr-17H"/>
+                                                </items>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
+                                            <separator alignment="left" alpha="0.0" id="kl7-Uk-h69"/>
+                                            <label alignment="left" verticalAlignment="center" text="{{Stack}}" textAlignment="left" minimumScaleFactor="0.50000000000000011" id="pIw-kR-k3i"/>
                                         </items>
                                         <connections>
                                             <segue destination="Rz1-1t-6k4" kind="push" identifier="OpenCardListSegue" id="Lw2-B6-CJM"/>
@@ -136,6 +143,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="headlineLabel" destination="pIw-kR-k3i" id="4eN-So-Q30"/>
+                                        <outlet property="numberLabel" destination="8VS-vr-17H" id="b94-kb-MPt"/>
                                     </connections>
                                 </tableRow>
                             </items>

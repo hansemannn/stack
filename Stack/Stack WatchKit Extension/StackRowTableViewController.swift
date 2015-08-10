@@ -11,6 +11,9 @@ import WatchKit
 class StackRowTableViewController: NSObject {
     
     var stackName: String!
-
+    var numberOfStacks: Int = 0
+    
+    @IBOutlet weak var numberLabel: WKInterfaceLabel!
+    
     @IBOutlet weak var headlineLabel: WKInterfaceLabel!
 }

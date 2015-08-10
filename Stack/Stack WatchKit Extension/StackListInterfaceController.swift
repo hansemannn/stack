@@ -32,9 +32,11 @@ class StackListInterfaceController: WKInterfaceController {
                 println(error)
             }
             
-            if let castedResponseDictionary = replyInfo as? [String: [String]] {
+            if let castedResponseDictionary = replyInfo as? [String: [AnyObject]] {
                 
-                self.stacks = castedResponseDictionary["Models"]!                
+                let cardsCount: [Int] = castedResponseDictionary["CardCount"] as! [Int]!
+                self.stacks = castedResponseDictionary["Models"] as! [String]!
+
                 self.tableView.setNumberOfRows(self.stacks.count == 0 ? 1 : self.stacks.count, withRowType: "StackCell")
                 
                 if self.stacks.count == 0 {
@@ -44,6 +46,8 @@ class StackListInterfaceController: WKInterfaceController {
                     for(index,name) in enumerate(self.stacks) {
                         var row = self.tableView.rowControllerAtIndex(index) as? StackRowTableViewController
                         row?.stackName = name
+                        row?.numberOfStacks = cardsCount[index]
+                        row?.numberLabel.setText(String(cardsCount[index]))
                         row?.headlineLabel.setText(name)
                     }
                 }

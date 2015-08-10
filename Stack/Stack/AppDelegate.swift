@@ -113,12 +113,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         var stacksAsStringArray = [String]()
+        var countsArray = [Int]()
         
         for(var i = 0; i < stacks.count; i++) {
             stacksAsStringArray.append(stacks[i].name)
+            countsArray.append(stacks[i].cards.allObjects.count)
         }
         
-        reply(["Models" : stacksAsStringArray])
+        reply(["Models" : stacksAsStringArray, "CardCount" : countsArray])
     }
 
     // MARK: - Core Data stack
