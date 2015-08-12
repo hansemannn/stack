@@ -51,6 +51,7 @@
 		3AEF9C3D1B681D2C005ECE0C /* iTunesConnectIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9C3C1B681D2C005ECE0C /* iTunesConnectIcon.png */; };
 		3AEF9C401B681FF5005ECE0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
 		3AEF9C411B681FF6005ECE0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1869FA1B2C2B1B008E779A /* Images.xcassets */; };
+		3AF4067B1B7B86AC00A2DE7D /* ReplyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4067A1B7B86AC00A2DE7D /* ReplyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		3AD6A66D1B2CC35200801033 /* NewStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStackTableViewController.swift; sourceTree = "<group>"; };
 		3AD6A66F1B2CC50D00801033 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		3AEF9C3C1B681D2C005ECE0C /* iTunesConnectIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesConnectIcon.png; sourceTree = "<group>"; };
+		3AF4067A1B7B86AC00A2DE7D /* ReplyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyManager.swift; sourceTree = "<group>"; };
 		BEE3AA35809D5A88C5F5D419 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D367988448BED4AC7C66661C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +281,7 @@
 			children = (
 				3AD6A66F1B2CC50D00801033 /* PersistenceManager.swift */,
 				3A3932191B67889800D2A1CB /* ScreenDimensions.swift */,
+				3AF4067A1B7B86AC00A2DE7D /* ReplyManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				3AD48E811B2DF8D100AAB523 /* StackDetailsCollectionViewController.swift in Sources */,
 				3AA1E3991B668EFA00EF2346 /* OverlayView.swift in Sources */,
 				3AA1E3971B668EE000EF2346 /* DraggableViewBackground.swift in Sources */,
+				3AF4067B1B7B86AC00A2DE7D /* ReplyManager.swift in Sources */,
 				3A1869F31B2C2AE6008E779A /* AppDelegate.swift in Sources */,
 				3A6E44261B66C29A001B5ED7 /* Stack.swift in Sources */,
 				3A2AB1B71B2B7B6600E03BA4 /* Stack.xcdatamodeld in Sources */,

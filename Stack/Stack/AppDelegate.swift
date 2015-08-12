@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         var categories = NSMutableSet()
@@ -77,50 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - WatchKit delegate
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
         
-        let requestedModels = userInfo as! [String : String]
-        
-        if requestedModels["Models"] == "Stacks" {
-            self.getAllStacks(userInfo, reply: reply)
-        } else if requestedModels["Models"] == "Cards" {
-            self.getCardsByStack(requestedModels["StackName"]!, userInfo: userInfo, reply: reply)
-        }
-    }
-    
-    func getCardsByStack(stackName: String,userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
-
-        var cards: [Card] = PersistenceManager.sharedManager.findCardsByStackName(stackName)
-        
-        if cards.count == 0 {
-            reply(["Models" : NSDictionary()])
-            return;
-        }
-        
-        var cardsAsDictionary = NSMutableDictionary(capacity: cards.count)
-        
-        for(var i = 0; i < cards.count; i++) {
-            cardsAsDictionary.setObject(cards[i].answer, forKey: cards[i].question)
-        }
-        
-        reply(["Models" : cardsAsDictionary])
-    }
-    
-    func getAllStacks(userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) -> Void {
-        var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()
-        
-        if stacks.count == 0 {
-            reply(["Models" : []])
-            return;
-        }
-        
-        var stacksAsStringArray = [String]()
-        var countsArray = [Int]()
-        
-        for(var i = 0; i < stacks.count; i++) {
-            stacksAsStringArray.append(stacks[i].name)
-            countsArray.append(stacks[i].cards.allObjects.count)
-        }
-        
-        reply(["Models" : stacksAsStringArray, "CardCount" : countsArray])
+        var replyManager = ReplyManager(userInfo: (userInfo as? [String : String])!, reply: reply)
+        replyManager.handleWatchKitExtensionRequest()
     }
 
     // MARK: - Core Data stack
