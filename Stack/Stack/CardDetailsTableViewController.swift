@@ -22,8 +22,15 @@ class CardDetailsTableViewController: UITableViewController, UITextViewDelegate 
     @IBAction func closeView(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-        
-    @IBAction func deleteCard(sender: UIBarButtonItem) {
+    
+    /**
+    Deletes a card after showing an destructive alert dialog
+    
+    :param: sender  The sender of the action
+    
+    :returns: void
+    */
+    @IBAction func deleteCard(sender: UIBarButtonItem) -> Void {
         let alert = UIAlertController(title: "Karte löschen", message: "Möchtest du die Karte wirklich löschen?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Unwiderruflich löschen", style: UIAlertActionStyle.Destructive, handler: {
@@ -40,6 +47,13 @@ class CardDetailsTableViewController: UITableViewController, UITextViewDelegate 
         self.submitButton.layer.cornerRadius = 5.0
     }
     
+    /**
+    Sets the view controller title.
+    
+    :param: animated   The decision of animating the opening of the view or not.
+    
+    :returns: void
+    */
     override func viewWillAppear(animated: Bool) {
         
         self.isNewCard = self.cardData == nil
@@ -61,7 +75,12 @@ class CardDetailsTableViewController: UITableViewController, UITextViewDelegate 
         self.answerField.delegate = self
     }
     
-    func saveCard() {
+    /**
+    Sets the card to be used from the segue
+    
+    :returns: void
+    */
+    func saveCard() -> Void {
         
         var card: Card = PersistenceManager.sharedManager.createCard()
         card.question = questionField.text

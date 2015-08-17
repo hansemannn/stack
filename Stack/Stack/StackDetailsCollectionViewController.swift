@@ -13,7 +13,14 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     var stack : Stack!
     var selectedItemIndex:NSIndexPath!
     
-    @IBAction func showActionOptions(sender: AnyObject) {
+    /**
+    Shows options to handle a stack
+    
+    :param: sender  The sender of the click event.
+    
+    :returns: void
+    */
+    @IBAction func showActionOptions(sender: AnyObject) -> Void {
         var options = UIAlertController(
             title: "Was möchtest du tun?",
             message: nil,
@@ -61,6 +68,13 @@ class StackDetailsCollectionViewController: UICollectionViewController {
         presentViewController(options, animated: true, completion: nil)
     }
     
+    /**
+    Adds a new card to the stack after creating it.
+    
+    :param: segue   The segue which triggered the delegate.
+    
+    :returns: void
+    */
     @IBAction func unwindNewCardToStack(segue: UIStoryboardSegue) {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
         
@@ -71,7 +85,14 @@ class StackDetailsCollectionViewController: UICollectionViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    /**
+    Sets the view controller title.
+    
+    :param: animated   The decision of animating the opening of the view or not.
+    
+    :returns: void
+    */
+    override func viewDidAppear(animated: Bool) -> Void {
         var title: String!
         
         if stack.cards.count == 1 {
@@ -108,7 +129,15 @@ class StackDetailsCollectionViewController: UICollectionViewController {
     
     // MARK: - Prepare for segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /**
+    Opens a new view controller depending on the segue.
+    
+    :param: segue    The segue which is triggered by the sender
+    :param: sender   The sender who triggered the event.
+    
+    :returns: void
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) -> Void {
         if segue.identifier == "ShowSwipeViewSegue" {
             let naviVC: UINavigationController = segue.destinationViewController as! UINavigationController
             var newStackVC: SwipeStackViewController = naviVC.topViewController as! SwipeStackViewController

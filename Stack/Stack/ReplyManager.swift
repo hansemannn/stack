@@ -18,6 +18,11 @@ class ReplyManager {
         self.reply = reply
     }
     
+    /**
+    Handle a watchkit extension request.
+    
+    :returns: void
+    */
     func handleWatchKitExtensionRequest() {       
         if self.requestedModels["Models"] == "Stacks" {
             self.getAllStacks()
@@ -26,6 +31,11 @@ class ReplyManager {
         }
     }
     
+    /**
+    Gets all cards depending on the stack name given by the WatchKit application.
+    
+    :returns: void
+    */
     func getCardsByStack() -> Void {
         let stackName = requestedModels["StackName"]!
         let cards: [Card] = PersistenceManager.sharedManager.findCardsByStackName(stackName)
@@ -44,6 +54,11 @@ class ReplyManager {
         self.reply(["Models" : cardsAsDictionary])
     }
     
+    /**
+    Gets all stacks depending on the stack name given by the WatchKit application.
+    
+    :returns: void
+    */
     func getAllStacks() -> Void {
         var stacks: [Stack] = PersistenceManager.sharedManager.findAllStacks()
         

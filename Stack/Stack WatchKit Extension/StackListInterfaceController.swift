@@ -22,7 +22,12 @@ class StackListInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
     }
     
-    func loadTableData() {
+    /**
+    Loads all stacks by calling the parent application.
+    
+    :returns: void
+    */
+    func loadTableData() -> Void {
         
         let dictionary = ["Models":"Stacks"]
 

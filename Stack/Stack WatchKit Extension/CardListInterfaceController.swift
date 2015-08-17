@@ -25,6 +25,11 @@ class CardListInterfaceController: WKInterfaceController {
         self.stackName = context as? String
     }
     
+    /**
+    Loads all cards by calling the parent application.
+    
+    :returns: void
+    */
     func loadTableData() {
         
         let dictionary = ["Models":"Cards", "StackName": self.stackName!] // TODO: Append stack name here

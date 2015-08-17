@@ -34,7 +34,12 @@ class NewStackTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - IBActions
     
-    @IBAction func saveStack() {
+    /**
+    Saves a new stack.
+    
+    :returns: void
+    */
+    @IBAction func saveStack() -> Void {
         if self.nameField.text.isEmpty == true {
             return
         }
@@ -46,7 +51,14 @@ class NewStackTableViewController: UITableViewController, UITextFieldDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func closeView(sender: UIBarButtonItem) {
+    /**
+    Closes the currently opened view controller
+    
+    :param: sender  The sender which triggered the click event.
+    
+    :returns: void
+    */
+    @IBAction func closeView(sender: UIBarButtonItem) -> Void {
         self.stack.managedObjectContext?.deleteObject(self.stack)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -68,7 +80,14 @@ class NewStackTableViewController: UITableViewController, UITextFieldDelegate {
         return 2
     }
     
-    @IBAction func unwindNewCardToList(segue: UIStoryboardSegue) {
+    /**
+    Adds a new card to the stack after creating it.
+    
+    :param: segue   The segue which triggered the delegate.
+    
+    :returns: void
+    */
+    @IBAction func unwindNewCardToList(segue: UIStoryboardSegue) -> Void {
         let source: CardDetailsTableViewController = segue.sourceViewController as! CardDetailsTableViewController
         
         if source.cardData != nil {

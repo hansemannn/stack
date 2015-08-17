@@ -44,7 +44,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.addUI()        
     }
     
-    func addConstraints() {
+    /**
+    Adds layout constraints to the views.
+    
+    :returns: void
+    */
+    func addConstraints() -> Void {
         self.emptyContainerView.snp_makeConstraints { (make) -> Void in
             
             make.width.equalTo(225)
@@ -73,6 +78,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    /**
+    Adds the UIViews to the main view.
+    
+    :returns: void
+    */
     func addUI() {
         self.newStackButton.layer.cornerRadius = 5.0
         
@@ -112,6 +122,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 1
     }
     
+    /**
+    Configures a new table view clel
+    
+    :param: tableView   The table view.
+    :param: indexPath   The indexPath of the cell to be configured.
+    
+    :returns: A new string with `str` repeated `times` times.
+    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellData = self.stacks[indexPath.row] as? Stack
         let cell = self.tableView.dequeueReusableCellWithIdentifier("StackCell", forIndexPath: indexPath) as! StackTableViewCell
@@ -134,6 +152,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
+    /**
+    Deletes a new stack when swiping-to-delete a cell.
+    
+    :param: tableView     The table view.
+    :param: editingStyle  The style of editing an cell.
+    :param: indexPath     The indexPath of the edited cell.
+    
+    :returns: A new string with `str` repeated `times` times.
+    */
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         PersistenceManager.sharedManager.managedObjectContext.deleteObject(self.stacks[indexPath.row] as! NSManagedObject)
         PersistenceManager.sharedManager.persistAll()
@@ -146,6 +173,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Prepare for segue
     
+    /**
+    Opens a new viewcontroller depending on the segue type.
+    
+    :param: seague   The segue which triggered the delegate.
+    :param: sender   The sender of the segue.
+    
+    :returns: A new string with `str` repeated `times` times.
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NewStackSegue" {
             
