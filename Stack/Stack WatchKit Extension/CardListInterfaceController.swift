@@ -19,6 +19,10 @@ class CardListInterfaceController: WKInterfaceController {
     
     var stackName: String!
     
+    @IBAction func menuReloadAction() {
+        self.loadTableData()
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         

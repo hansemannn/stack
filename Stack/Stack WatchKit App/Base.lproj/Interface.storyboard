@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Main Menu Interface Controller-->
+        <!--Stack!-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="MainMenuInterfaceController" customModule="Stack_WatchKit_Extension">
+                <controller title="Stack!" id="AgC-eL-Hgc" customClass="MainMenuInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="tUs-3k-qje">
                             <items>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="16" y="348"/>
         </scene>
-        <!--Card List Interface Controller-->
+        <!--Karten-->
         <scene sceneID="TRe-El-ahe">
             <objects>
-                <controller id="Rz1-1t-6k4" customClass="CardListInterfaceController" customModule="Stack_WatchKit_Extension">
+                <controller title="Karten" id="Rz1-1t-6k4" customClass="CardListInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="rLq-Ew-XrC">
                             <items>
@@ -60,6 +60,15 @@
                         </table>
                         <label height="43.5" alignment="center" verticalAlignment="center" hidden="YES" text="Keine Karten vorhanden" textAlignment="center" numberOfLines="2" id="Fra-3c-0Q6"/>
                     </items>
+                    <menu key="menu" id="6to-uq-3Vc">
+                        <items>
+                            <menuItem title="Neu laden" icon="repeat" id="jEq-Wu-Xip">
+                                <connections>
+                                    <action selector="menuReloadAction" destination="Rz1-1t-6k4" id="gE1-xU-iOa"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="emptyCardLabel" destination="Fra-3c-0Q6" id="Wom-2l-b74"/>
                         <outlet property="tableView" destination="rLq-Ew-XrC" id="Ai4-E6-QPA"/>
@@ -68,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="423" y="348"/>
         </scene>
-        <!--Card Details Interface Controller-->
+        <!--Details-->
         <scene sceneID="ub3-Of-ddR">
             <objects>
-                <controller id="ACz-VX-XNP" customClass="CardDetailsInterfaceController" customModule="Stack_WatchKit_Extension">
+                <controller title="Details" id="ACz-VX-XNP" customClass="CardDetailsInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="LFy-XD-LXc">
                             <items>
@@ -117,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="632" y="348"/>
         </scene>
-        <!--Stack List Interface Controller-->
+        <!--Stapel-->
         <scene sceneID="1Yz-zE-2v4">
             <objects>
-                <controller id="F2l-1A-S0c" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
+                <controller title="Stapel" id="F2l-1A-S0c" customClass="StackListInterfaceController" customModule="Stack_WatchKit_Extension">
                     <items>
                         <label height="43.5" alignment="center" verticalAlignment="center" hidden="YES" text="Keine Stapel vorhanden" textAlignment="center" numberOfLines="2" id="hsI-ji-lTd"/>
                         <table alignment="left" id="eEZ-AY-s2C">
@@ -149,6 +158,15 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="jov-VC-quF">
+                        <items>
+                            <menuItem title="Neu laden" icon="repeat" id="TFj-1J-Ige">
+                                <connections>
+                                    <action selector="menuReloadAction" destination="F2l-1A-S0c" id="f4e-c7-E4L"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="emptyStackLabel" destination="hsI-ji-lTd" id="Us1-B4-zwV"/>
                         <outlet property="tableView" destination="eEZ-AY-s2C" id="x0s-5X-02r"/>

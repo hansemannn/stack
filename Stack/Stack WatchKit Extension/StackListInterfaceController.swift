@@ -18,6 +18,10 @@ class StackListInterfaceController: WKInterfaceController {
     
     var stacks: [String] = []
     
+    @IBAction func menuReloadAction() {
+        self.loadTableData()
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
@@ -34,7 +38,8 @@ class StackListInterfaceController: WKInterfaceController {
         WKInterfaceController.openParentApplication(dictionary) { (replyInfo, error) -> Void in
             
             if error != nil {
-                println(error)
+                println(error.localizedDescription)
+                return;
             }
             
             if let castedResponseDictionary = replyInfo as? [String: [AnyObject]] {
